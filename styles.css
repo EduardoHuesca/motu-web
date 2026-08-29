@@ -750,6 +750,7 @@ a {
   .site-header {
     min-height: 82px;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
   }
 
@@ -765,13 +766,16 @@ a {
   .menu-toggle {
     width: 44px;
     height: 44px;
-    display: grid;
     place-content: center;
     gap: 7px;
     border: 1px solid rgba(255,255,255,.11);
     border-radius: 50%;
     color: var(--cream);
     background: rgba(255,255,255,.055);
+  }
+
+  html.menu-ready .menu-toggle {
+    display: grid;
   }
 
   .menu-toggle__line {
@@ -792,10 +796,9 @@ a {
   }
 
   .site-nav {
-    position: absolute;
-    top: 72px;
-    right: 0;
-    left: 0;
+    position: static;
+    order: 3;
+    width: 100%;
     display: grid;
     gap: 0;
     padding: 10px;
@@ -803,6 +806,19 @@ a {
     border-radius: 20px;
     background: rgba(15,22,18,.98);
     box-shadow: 0 24px 50px rgba(0,0,0,.36);
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+    transform: none;
+  }
+
+  html.menu-ready .site-nav {
+    position: absolute;
+    top: 72px;
+    right: 0;
+    left: 0;
+    order: initial;
+    width: auto;
     opacity: 0;
     visibility: hidden;
     pointer-events: none;
@@ -810,7 +826,7 @@ a {
     transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms;
   }
 
-  .site-nav.is-open {
+  html.menu-ready .site-nav.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;

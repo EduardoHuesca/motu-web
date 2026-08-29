@@ -20,6 +20,10 @@ if (menuButton && navigation) {
   document.addEventListener("keydown", (event) => {
     if (event.key === "Escape") closeMenu();
   });
+
+  // El menú se colapsa solo cuando sus controles ya están conectados. Así la
+  // navegación permanece disponible si el script no llega a ejecutarse.
+  document.documentElement.classList.add("menu-ready");
 }
 
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;

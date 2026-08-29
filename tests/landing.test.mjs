@@ -57,9 +57,12 @@ test("el contenido sigue visible si JavaScript no se ejecuta", () => {
   assert.match(script, /classList\.remove\("is-pending"\)/);
 });
 
-test("el menú móvil cerrado no conserva enlaces enfocables invisibles", () => {
-  assert.match(styles, /\.site-nav\s*\{[^}]*visibility:\s*hidden;/s);
-  assert.match(styles, /\.site-nav\.is-open\s*\{[^}]*visibility:\s*visible;/s);
+test("la navegación móvil funciona con y sin JavaScript", () => {
+  assert.match(script, /document\.documentElement\.classList\.add\("menu-ready"\)/);
+  assert.match(styles, /html\.menu-ready \.menu-toggle\s*\{[^}]*display:\s*grid;/s);
+  assert.match(styles, /\.site-nav\s*\{[^}]*visibility:\s*visible;/s);
+  assert.match(styles, /html\.menu-ready \.site-nav\s*\{[^}]*visibility:\s*hidden;/s);
+  assert.match(styles, /html\.menu-ready \.site-nav\.is-open\s*\{[^}]*visibility:\s*visible;/s);
 });
 
 test("GitHub Pages prueba la página antes de publicarla", () => {
