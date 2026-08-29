@@ -1,0 +1,157 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#080d0b">
+  <meta name="description" content="Mótu conecta tus entrenamientos de fuerza, tus rutas y tu progreso en un solo lugar.">
+  <title>Mótu — Todo tu movimiento conectado</title>
+  <link rel="icon" href="assets/motu-mark-darkmode.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+
+      <header class="site-header shell">
+        <a class="brand" href="#contenido" aria-label="Mótu, inicio">
+          <img src="assets/motu-mark-darkmode.svg" alt="" width="44" height="44">
+          <span class="brand-word"><span>m</span><span class="brand-o">o</span><span>tu</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Navegación principal">
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#entrenamientos">Entrenamientos</a>
+          <a href="#explora">Explora</a>
+          <a href="#progreso">Progreso</a>
+        </nav>
+
+        <div class="companion-chip" aria-label="Mótumotu, tu compañero">
+          <span>Tu compañero<br>te acompaña.</span>
+          <img src="assets/motumotu.jpg" alt="Mótumotu" width="48" height="48">
+        </div>
+      </header>
+
+      <div class="hero-layout shell">
+        <div class="hero-copy reveal">
+          <span class="device-pill">iPhone + Apple Watch</span>
+          <h1 id="hero-title">Todo tu movimiento.<br>Por fin <span>conectado.</span></h1>
+          <p>Entrena. Explora. Mira cómo avanzas.</p>
+          <a class="primary-cta" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
+            <span>Solicitar acceso</span>
+            <span class="primary-cta__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="product-stage reveal" aria-label="Pantallas reales de Mótu">
+          <div class="product-shadow" aria-hidden="true"></div>
+
+          <figure class="phone phone--map">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="assets/mapa-motu.jpg" alt="Mapa de Mótu mostrando Dartmouth y Halifax" width="690" height="1500">
+          </figure>
+
+          <figure class="phone phone--strength">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="assets/fuerza-motu.jpg" alt="Sesión de fuerza de Mótu con press de banca" width="690" height="1500">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="loop-section" id="como-funciona" aria-labelledby="loop-title">
+      <div class="loop-track" aria-hidden="true"></div>
+      <div class="loop-end" aria-hidden="true">↻</div>
+
+      <div class="loop-layout shell">
+        <div class="loop-copy reveal">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2 id="loop-title">Un loop simple.<br>Resultados reales.</h2>
+          <p>Cuatro pasos que se conectan solos.<br>Tú solo muévete.</p>
+        </div>
+
+        <div class="steps" aria-label="El ciclo de Mótu">
+          <article class="step-card reveal" id="entrenamientos">
+            <header>
+              <span class="step-number">01</span>
+              <h3>Entrena</h3>
+            </header>
+            <p>Sesiones claras para mantener el foco.</p>
+            <div class="screen-window">
+              <img src="assets/fuerza-motu.jpg" alt="Entrenamiento de fuerza en Mótu" width="690" height="1500">
+            </div>
+          </article>
+
+          <article class="step-card reveal" id="explora">
+            <header>
+              <span class="step-number">02</span>
+              <h3>Explora</h3>
+            </header>
+            <p>Rutas con contexto para recorrer tu ciudad.</p>
+            <div class="screen-window">
+              <img src="assets/mapa-motu.jpg" alt="Mapa y rutas reales de Mótu" width="690" height="1500">
+            </div>
+          </article>
+
+          <article class="step-card reveal" id="progreso">
+            <header>
+              <span class="step-number">03</span>
+              <h3>Mira tu progreso</h3>
+            </header>
+            <p>Señales claras para entender cómo avanzas.</p>
+            <div class="screen-window">
+              <img src="assets/progreso-motu.jpg" alt="Progreso de fuerza en Mótu" width="690" height="1500">
+            </div>
+          </article>
+
+          <article class="step-card reveal" id="constancia">
+            <header>
+              <span class="step-number">04</span>
+              <h3>Vuelve a empezar</h3>
+            </header>
+            <p>Tu constancia visible, semana tras semana.</p>
+            <div class="screen-window">
+              <img src="assets/constancia-motu.jpg" alt="Racha y constancia en Mótu" width="690" height="1500">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-inner shell reveal">
+        <div>
+          <span class="eyebrow eyebrow--dark">Beta privada</span>
+          <h2 id="closing-title">Empieza a conectar todo lo que haces.</h2>
+        </div>
+        <a class="primary-cta primary-cta--light" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
+          <span>Solicitar acceso</span>
+          <span class="primary-cta__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <a class="brand brand--footer" href="#contenido" aria-label="Mótu, inicio">
+        <img src="assets/motu-mark-darkmode.svg" alt="" width="36" height="36">
+        <span class="brand-word"><span>m</span><span class="brand-o">o</span><span>tu</span></span>
+      </a>
+      <p>Fuerza, rutas y progreso en un mismo lugar.</p>
+      <a href="mailto:support@mootuapp.com">support@mootuapp.com</a>
+    </div>
+  </footer>
+</body>
+</html>
