@@ -29,8 +29,13 @@ Manrope se distribuye bajo la SIL Open Font License 1.1, incluida en
 ## Publicación
 
 Todo cambio entra mediante una propuesta contra `main`. Al integrarse, GitHub
-Pages prepara la versión publicada. Cambiar el DNS de `mootuapp.com` es una tarea
-posterior y manual de Eduardo; no forma parte de una propuesta normal de código.
+Pages prepara una vista previa comprobable. La página final vive en Squarespace,
+donde ya existe el plan anual de Mótu. El paquete para copiarla sin depender de
+JavaScript se genera con `npm run build:squarespace`.
+
+Actualizar la página visible de Squarespace es una tarea manual de Eduardo
+después de revisar la vista previa; no forma parte de una propuesta normal de
+código. El dominio y los registros del correo no se modifican.
 
 La primera versión se extrajo del commit
 `4eafcd2d6c059633e9cba7d7fa121f1f1d22112d` de

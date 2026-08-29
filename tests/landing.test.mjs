@@ -10,12 +10,24 @@ const html = readFileSync(resolve(siteRoot, "index.html"), "utf8");
 const styles = readFileSync(resolve(siteRoot, "styles.css"), "utf8");
 const script = readFileSync(resolve(siteRoot, "script.js"), "utf8");
 const pagesWorkflow = readFileSync(resolve(siteRoot, ".github/workflows/pages.yml"), "utf8");
+const squarespaceBlock = readFileSync(resolve(siteRoot, "squarespace/motu-code-block.html"), "utf8");
 
 test("la página usa la marca y la promesa aprobadas", () => {
   assert.match(html, /Todo tu movimiento\./);
   assert.match(html, /Por fin <span>conectado\.<\/span>/);
   assert.match(html, /Un loop simple\./);
   assert.match(html, /Resultados reales\./);
+});
+
+test("la sección de cuatro pasos conserva la composición del mockup aprobado", () => {
+  assert.doesNotMatch(html, /Sesiones claras para mantener el foco/);
+  assert.doesNotMatch(html, /Rutas con contexto para recorrer tu ciudad/);
+  assert.doesNotMatch(html, /Señales claras para entender cómo avanzas/);
+  assert.doesNotMatch(html, /Tu constancia visible, semana tras semana/);
+  assert.match(styles, /\.hero\s*\{[^}]*min-height:\s*648px;/s);
+  assert.match(styles, /\.loop-section\s*\{[^}]*padding:\s*20px 0 48px;/s);
+  assert.match(styles, /\.loop-track\s*\{[^}]*top:\s*77px;[^}]*height:\s*146px;/s);
+  assert.match(styles, /\.screen-window\s*\{[^}]*height:\s*455px;[^}]*margin-top:\s*12px;/s);
 });
 
 test("las cuatro pantallas reales están presentes", () => {
@@ -77,4 +89,13 @@ test("la licencia OFL acompaña a Manrope", () => {
   const licensePath = resolve(siteRoot, "assets/OFL.txt");
   assert.equal(existsSync(licensePath), true);
   assert.match(readFileSync(licensePath, "utf8"), /SIL OPEN FONT LICENSE Version 1\.1/);
+});
+
+test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
+  assert.match(squarespaceBlock, /<meta charset="utf-8">/);
+  assert.match(squarespaceBlock, /<div id="motu-landing">/);
+  assert.match(squarespaceBlock, /#motu-landing \.hero/);
+  assert.match(squarespaceBlock, /https:\/\/eduardohuesca\.github\.io\/motu-web\/assets\/mapa-motu\.jpg/);
+  assert.doesNotMatch(squarespaceBlock, /<script/i);
+  assert.doesNotMatch(squarespaceBlock, /src="assets\//);
 });

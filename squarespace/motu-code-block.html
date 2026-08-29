@@ -1,12 +1,47 @@
+<!--
+  Generado por npm run build:squarespace.
+  No editar a mano: index.html y styles.css son la fuente.
+-->
+<meta charset="utf-8">
+<style>
+
+html:has(#motu-landing),
+body:has(#motu-landing) {
+  margin: 0 !important;
+  overflow-x: hidden !important;
+  background: #080d0b !important;
+}
+
+body:has(#motu-landing) #header,
+body:has(#motu-landing) footer.sections {
+  display: none !important;
+}
+
+body:has(#motu-landing) #page,
+body:has(#motu-landing) .page-section:has(#motu-landing) > .content-wrapper {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+body:has(#motu-landing) .sqs-block-code:has(#motu-landing),
+body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
+  padding: 0 !important;
+}
+
+#motu-landing {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
 @font-face {
   font-family: "Manrope";
-  src: url("assets/manrope.ttf") format("truetype");
+  src: url("https://eduardohuesca.github.io/motu-web/assets/manrope.ttf") format("truetype");
   font-style: normal;
   font-weight: 200 800;
   font-display: swap;
 }
 
-:root {
+#motu-landing {
   color-scheme: dark light;
   --ink: #191d1b;
   --ink-deep: #080d0b;
@@ -22,16 +57,16 @@
   --shell: min(1460px, calc(100% - 80px));
 }
 
-* {
+#motu-landing * {
   box-sizing: border-box;
 }
 
-html {
+#motu-landing {
   scroll-behavior: smooth;
   background: var(--ink-deep);
 }
 
-body {
+#motu-landing {
   margin: 0;
   overflow-x: hidden;
   color: var(--ink);
@@ -40,20 +75,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img {
+#motu-landing img {
   max-width: 100%;
 }
 
-a {
+#motu-landing a {
   color: inherit;
 }
 
-.shell {
+#motu-landing .shell {
   width: var(--shell);
   margin-inline: auto;
 }
 
-.sr-only {
+#motu-landing .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -65,7 +100,7 @@ a {
   border: 0;
 }
 
-.skip-link {
+#motu-landing .skip-link {
   position: fixed;
   z-index: 100;
   top: 12px;
@@ -77,11 +112,11 @@ a {
   transform: translateY(-140%);
 }
 
-.skip-link:focus {
+#motu-landing .skip-link:focus {
   transform: translateY(0);
 }
 
-.hero {
+#motu-landing .hero {
   min-height: 648px;
   position: relative;
   overflow: hidden;
@@ -92,14 +127,14 @@ a {
     linear-gradient(115deg, var(--ink-deep) 0%, var(--ink-soft) 56%, #070b09 100%);
 }
 
-.hero-glow {
+#motu-landing .hero-glow {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
   filter: blur(80px);
 }
 
-.hero-glow--one {
+#motu-landing .hero-glow--one {
   width: 460px;
   height: 460px;
   right: 18%;
@@ -107,7 +142,7 @@ a {
   background: rgba(47, 203, 133, 0.14);
 }
 
-.hero-glow--two {
+#motu-landing .hero-glow--two {
   width: 260px;
   height: 260px;
   left: 17%;
@@ -115,7 +150,7 @@ a {
   background: rgba(11, 145, 85, 0.12);
 }
 
-.site-header {
+#motu-landing .site-header {
   min-height: 96px;
   position: relative;
   z-index: 20;
@@ -125,7 +160,7 @@ a {
   gap: 64px;
 }
 
-.brand {
+#motu-landing .brand {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -133,29 +168,29 @@ a {
   text-decoration: none;
 }
 
-.brand img {
+#motu-landing .brand img {
   width: 46px;
   height: 46px;
 }
 
-.brand-word {
+#motu-landing .brand-word {
   display: inline-flex;
   font-size: 31px;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
-.brand-o {
+#motu-landing .brand-o {
   color: var(--green-bright);
 }
 
-.site-nav {
+#motu-landing .site-nav {
   display: flex;
   align-items: center;
   gap: clamp(24px, 3vw, 48px);
 }
 
-.site-nav a {
+#motu-landing .site-nav a {
   position: relative;
   color: var(--muted-dark);
   font-size: 15px;
@@ -164,7 +199,7 @@ a {
   transition: color 180ms ease;
 }
 
-.site-nav a::after {
+#motu-landing .site-nav a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -178,17 +213,17 @@ a {
   transition: transform 180ms ease;
 }
 
-.site-nav a:hover,
-.site-nav a:focus-visible {
+#motu-landing .site-nav a:hover,
+#motu-landing .site-nav a:focus-visible {
   color: var(--cream);
 }
 
-.site-nav a:hover::after,
-.site-nav a:focus-visible::after {
+#motu-landing .site-nav a:hover::after,
+#motu-landing .site-nav a:focus-visible::after {
   transform: scaleX(1);
 }
 
-.companion-chip {
+#motu-landing .companion-chip {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -201,7 +236,7 @@ a {
   line-height: 1.24;
 }
 
-.companion-chip img {
+#motu-landing .companion-chip img {
   width: 48px;
   height: 48px;
   border: 2px solid var(--green);
@@ -209,11 +244,11 @@ a {
   object-fit: cover;
 }
 
-.menu-toggle {
+#motu-landing .menu-toggle {
   display: none;
 }
 
-.hero-layout {
+#motu-landing .hero-layout {
   min-height: 552px;
   display: grid;
   grid-template-columns: minmax(440px, 0.88fr) minmax(560px, 1.12fr);
@@ -221,13 +256,13 @@ a {
   gap: 12px;
 }
 
-.hero-copy {
+#motu-landing .hero-copy {
   position: relative;
   z-index: 10;
   padding: 16px 0 80px 30px;
 }
 
-.device-pill {
+#motu-landing .device-pill {
   display: inline-flex;
   margin-bottom: 30px;
   padding: 7px 13px;
@@ -238,7 +273,7 @@ a {
   font-weight: 500;
 }
 
-.hero h1 {
+#motu-landing .hero h1 {
   max-width: 680px;
   margin: 0;
   font-size: clamp(54px, 5vw, 78px);
@@ -247,18 +282,18 @@ a {
   font-weight: 800;
 }
 
-.hero h1 span {
+#motu-landing .hero h1 span {
   color: #16c77a;
 }
 
-.hero-copy > p {
+#motu-landing .hero-copy > p {
   margin: 27px 0 42px;
   color: var(--muted-dark);
   font-size: clamp(18px, 1.55vw, 23px);
   line-height: 1.45;
 }
 
-.primary-cta {
+#motu-landing .primary-cta {
   display: inline-flex;
   align-items: center;
   gap: 44px;
@@ -274,25 +309,25 @@ a {
   transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease;
 }
 
-.primary-cta:hover {
+#motu-landing .primary-cta:hover {
   box-shadow: 0 20px 48px rgba(18, 203, 123, 0.28);
   transform: translateY(-3px);
 }
 
-.primary-cta:active {
+#motu-landing .primary-cta:active {
   transform: scale(0.97);
 }
 
-.primary-cta:focus-visible,
-.site-nav a:focus-visible,
-.brand:focus-visible,
-.site-footer a:focus-visible,
-.menu-toggle:focus-visible {
+#motu-landing .primary-cta:focus-visible,
+#motu-landing .site-nav a:focus-visible,
+#motu-landing .brand:focus-visible,
+#motu-landing .site-footer a:focus-visible,
+#motu-landing .menu-toggle:focus-visible {
   outline: 3px solid var(--green-bright);
   outline-offset: 5px;
 }
 
-.primary-cta__arrow {
+#motu-landing .primary-cta__arrow {
   width: 50px;
   height: 50px;
   display: grid;
@@ -304,14 +339,14 @@ a {
   font-weight: 500;
 }
 
-.product-stage {
+#motu-landing .product-stage {
   align-self: end;
   height: 552px;
   position: relative;
   min-width: 0;
 }
 
-.product-stage::before {
+#motu-landing .product-stage::before {
   content: "";
   position: absolute;
   width: 540px;
@@ -323,7 +358,7 @@ a {
   filter: blur(2px);
 }
 
-.product-shadow {
+#motu-landing .product-shadow {
   position: absolute;
   z-index: 1;
   right: -4%;
@@ -334,7 +369,7 @@ a {
   filter: blur(10px);
 }
 
-.phone {
+#motu-landing .phone {
   position: absolute;
   z-index: 3;
   overflow: hidden;
@@ -348,7 +383,7 @@ a {
     0 0 0 1px rgba(255,255,255,.08);
 }
 
-.phone::after {
+#motu-landing .phone::after {
   content: "";
   position: absolute;
   inset: 0;
@@ -357,14 +392,14 @@ a {
   pointer-events: none;
 }
 
-.phone img {
+#motu-landing .phone img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
 
-.dynamic-island {
+#motu-landing .dynamic-island {
   position: absolute;
   z-index: 4;
   top: 11px;
@@ -377,7 +412,7 @@ a {
   box-shadow: inset 0 0 1px rgba(255,255,255,.22);
 }
 
-.phone--map {
+#motu-landing .phone--map {
   width: 326px;
   height: 706px;
   left: 8%;
@@ -385,7 +420,7 @@ a {
   transform: rotate(-1deg);
 }
 
-.phone--strength {
+#motu-landing .phone--strength {
   z-index: 4;
   width: 266px;
   height: 576px;
@@ -394,14 +429,14 @@ a {
   transform: rotate(4.3deg);
 }
 
-.loop-section {
+#motu-landing .loop-section {
   position: relative;
   overflow: hidden;
   padding: 20px 0 48px;
   background: var(--cream);
 }
 
-.loop-layout {
+#motu-landing .loop-layout {
   min-height: 522px;
   display: grid;
   grid-template-columns: 280px minmax(0, 1fr);
@@ -409,13 +444,13 @@ a {
   gap: 42px;
 }
 
-.loop-copy {
+#motu-landing .loop-copy {
   position: relative;
   z-index: 3;
   padding: 25px 0 0;
 }
 
-.eyebrow {
+#motu-landing .eyebrow {
   color: var(--green);
   font-size: 11px;
   font-weight: 800;
@@ -423,8 +458,8 @@ a {
   text-transform: uppercase;
 }
 
-.loop-copy h2,
-.closing h2 {
+#motu-landing .loop-copy h2,
+#motu-landing .closing h2 {
   margin: 21px 0 18px;
   font-size: clamp(34px, 2.4vw, 38px);
   line-height: 1.06;
@@ -432,14 +467,14 @@ a {
   font-weight: 800;
 }
 
-.loop-copy p {
+#motu-landing .loop-copy p {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
 }
 
-.steps {
+#motu-landing .steps {
   width: 100%;
   max-width: 1028px;
   position: relative;
@@ -449,7 +484,7 @@ a {
   gap: 18px;
 }
 
-.step-card {
+#motu-landing .step-card {
   min-width: 0;
   min-height: 522px;
   position: relative;
@@ -462,13 +497,13 @@ a {
   scroll-margin-top: 24px;
 }
 
-.step-card header {
+#motu-landing .step-card header {
   display: flex;
   align-items: baseline;
   gap: 10px;
 }
 
-.step-card h3 {
+#motu-landing .step-card h3 {
   margin: 0;
   font-size: 14px;
   line-height: 1.15;
@@ -476,13 +511,13 @@ a {
   font-weight: 800;
 }
 
-.step-number {
+#motu-landing .step-number {
   color: #12b76d;
   font-size: 14px;
   font-weight: 700;
 }
 
-.screen-window {
+#motu-landing .screen-window {
   overflow: hidden;
   height: 455px;
   margin-top: 12px;
@@ -492,7 +527,7 @@ a {
   box-shadow: 0 20px 42px rgba(20,25,22,.18);
 }
 
-.screen-window img {
+#motu-landing .screen-window img {
   width: 100%;
   height: 100%;
   display: block;
@@ -500,7 +535,7 @@ a {
   object-position: top center;
 }
 
-.loop-track {
+#motu-landing .loop-track {
   position: absolute;
   z-index: 1;
   top: 77px;
@@ -512,7 +547,7 @@ a {
   opacity: .75;
 }
 
-.loop-end {
+#motu-landing .loop-end {
   position: absolute;
   z-index: 4;
   top: 129px;
@@ -528,7 +563,7 @@ a {
   font-weight: 800;
 }
 
-.closing {
+#motu-landing .closing {
   padding: 80px 0;
   color: var(--cream);
   background:
@@ -536,33 +571,33 @@ a {
     var(--ink-soft);
 }
 
-.closing-inner {
+#motu-landing .closing-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
 }
 
-.closing h2 {
+#motu-landing .closing h2 {
   max-width: 750px;
   margin-bottom: 0;
   font-size: clamp(42px, 4.4vw, 67px);
 }
 
-.eyebrow--dark {
+#motu-landing .eyebrow--dark {
   color: var(--green-bright);
 }
 
-.primary-cta--light {
+#motu-landing .primary-cta--light {
   flex: 0 0 auto;
 }
 
-.site-footer {
+#motu-landing .site-footer {
   color: #acb3af;
   background: var(--ink-deep);
 }
 
-.site-footer__inner {
+#motu-landing .site-footer__inner {
   min-height: 130px;
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -570,137 +605,137 @@ a {
   gap: 40px;
 }
 
-.brand--footer .brand-word {
+#motu-landing .brand--footer .brand-word {
   font-size: 25px;
 }
 
-.brand--footer img {
+#motu-landing .brand--footer img {
   width: 36px;
   height: 36px;
 }
 
-.site-footer p {
+#motu-landing .site-footer p {
   margin: 0;
   font-size: 13px;
 }
 
-.site-footer__inner > a:last-child {
+#motu-landing .site-footer__inner > a:last-child {
   font-size: 13px;
   text-decoration-color: rgba(255,255,255,.25);
   text-underline-offset: 5px;
 }
 
-.reveal {
+#motu-landing .reveal {
   opacity: 1;
   transform: none;
   transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
 }
 
-.reveal.is-pending {
+#motu-landing .reveal.is-pending {
   opacity: 0;
   transform: translateY(22px);
 }
 
-.reveal.is-visible {
+#motu-landing .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
-.steps .reveal:nth-child(2) { transition-delay: 70ms; }
-.steps .reveal:nth-child(3) { transition-delay: 140ms; }
-.steps .reveal:nth-child(4) { transition-delay: 210ms; }
+#motu-landing .steps .reveal:nth-child(2) { transition-delay: 70ms; }
+#motu-landing .steps .reveal:nth-child(3) { transition-delay: 140ms; }
+#motu-landing .steps .reveal:nth-child(4) { transition-delay: 210ms; }
 
 @media (max-width: 1260px) {
-  :root {
+  #motu-landing {
     --shell: min(1140px, calc(100% - 48px));
   }
 
-  .site-header {
+  #motu-landing .site-header {
     gap: 36px;
   }
 
-  .companion-chip {
+  #motu-landing .companion-chip {
     display: none;
   }
 
-  .site-header {
+  #motu-landing .site-header {
     grid-template-columns: auto 1fr;
   }
 
-  .hero-layout {
+  #motu-landing .hero-layout {
     grid-template-columns: minmax(390px, .84fr) minmax(500px, 1.16fr);
   }
 
-  .hero-copy {
+  #motu-landing .hero-copy {
     padding-left: 0;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     left: 2%;
   }
 
-  .loop-layout {
+  #motu-landing .loop-layout {
     grid-template-columns: 230px minmax(0, 1fr);
     gap: 28px;
   }
 
-  .steps {
+  #motu-landing .steps {
     gap: 11px;
   }
 
-  .step-card {
+  #motu-landing .step-card {
     padding-inline: 12px;
   }
 
-  .step-card h3 {
+  #motu-landing .step-card h3 {
     font-size: 14px;
   }
 
 }
 
 @media (max-width: 980px) {
-  .hero {
+  #motu-landing .hero {
     min-height: 650px;
   }
 
-  .site-nav {
+  #motu-landing .site-nav {
     gap: 20px;
   }
 
-  .hero-layout {
+  #motu-landing .hero-layout {
     min-height: 554px;
     grid-template-columns: 46% 54%;
   }
 
-  .hero h1 {
+  #motu-landing .hero h1 {
     font-size: clamp(42px, 6vw, 58px);
   }
 
-  .hero-copy > p {
+  #motu-landing .hero-copy > p {
     margin-bottom: 30px;
   }
 
-  .product-stage {
+  #motu-landing .product-stage {
     height: 554px;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     width: 255px;
     height: 552px;
     top: 0;
   }
 
-  .phone--strength {
+  #motu-landing .phone--strength {
     width: 205px;
     height: 444px;
     top: 92px;
   }
 
-  .loop-layout {
+  #motu-landing .loop-layout {
     grid-template-columns: 1fr;
   }
 
-  .loop-copy {
+  #motu-landing .loop-copy {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: end;
@@ -708,55 +743,55 @@ a {
     padding-top: 0;
   }
 
-  .loop-copy .eyebrow {
+  #motu-landing .loop-copy .eyebrow {
     grid-column: 1 / -1;
   }
 
-  .loop-copy h2 {
+  #motu-landing .loop-copy h2 {
     margin: 0;
   }
 
-  .steps {
+  #motu-landing .steps {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 18px;
   }
 
-  .step-card {
+  #motu-landing .step-card {
     min-height: 570px;
   }
 
-  .screen-window {
+  #motu-landing .screen-window {
     height: 450px;
   }
 
-  .loop-track,
-  .loop-end {
+  #motu-landing .loop-track,
+#motu-landing .loop-end {
     display: none;
   }
 }
 
 @media (max-width: 760px) {
-  :root {
+  #motu-landing {
     --shell: min(100% - 32px, 680px);
   }
 
-  .site-header {
+  #motu-landing .site-header {
     min-height: 82px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .brand img {
+  #motu-landing .brand img {
     width: 39px;
     height: 39px;
   }
 
-  .brand-word {
+  #motu-landing .brand-word {
     font-size: 27px;
   }
 
-  .menu-toggle {
+  #motu-landing .menu-toggle {
     width: 44px;
     height: 44px;
     place-content: center;
@@ -767,11 +802,11 @@ a {
     background: rgba(255,255,255,.055);
   }
 
-  html.menu-ready .menu-toggle {
+  #motu-landing.menu-ready .menu-toggle {
     display: grid;
   }
 
-  .menu-toggle__line {
+  #motu-landing .menu-toggle__line {
     width: 19px;
     height: 2px;
     display: block;
@@ -780,15 +815,15 @@ a {
     transition: transform 180ms ease;
   }
 
-  .menu-toggle[aria-expanded="true"] .menu-toggle__line:first-child {
+  #motu-landing .menu-toggle[aria-expanded="true"] .menu-toggle__line:first-child {
     transform: translateY(4.5px) rotate(45deg);
   }
 
-  .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(2) {
+  #motu-landing .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(2) {
     transform: translateY(-4.5px) rotate(-45deg);
   }
 
-  .site-nav {
+  #motu-landing .site-nav {
     position: static;
     order: 3;
     width: 100%;
@@ -805,7 +840,7 @@ a {
     transform: none;
   }
 
-  html.menu-ready .site-nav {
+  #motu-landing.menu-ready .site-nav {
     position: absolute;
     top: 72px;
     right: 0;
@@ -819,7 +854,7 @@ a {
     transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms;
   }
 
-  html.menu-ready .site-nav.is-open {
+  #motu-landing.menu-ready .site-nav.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -827,120 +862,120 @@ a {
     transition-delay: 0s;
   }
 
-  .site-nav a {
+  #motu-landing .site-nav a {
     padding: 14px 15px;
     border-radius: 12px;
   }
 
-  .site-nav a:hover {
+  #motu-landing .site-nav a:hover {
     background: rgba(255,255,255,.05);
   }
 
-  .site-nav a::after {
+  #motu-landing .site-nav a::after {
     display: none;
   }
 
-  .hero {
+  #motu-landing .hero {
     min-height: 1110px;
   }
 
-  .hero-layout {
+  #motu-landing .hero-layout {
     min-height: 0;
     display: block;
   }
 
-  .hero-copy {
+  #motu-landing .hero-copy {
     padding: 58px 0 0;
   }
 
-  .device-pill {
+  #motu-landing .device-pill {
     margin-bottom: 22px;
   }
 
-  .hero h1 {
+  #motu-landing .hero h1 {
     font-size: clamp(46px, 12vw, 66px);
   }
 
-  .hero-copy > p {
+  #motu-landing .hero-copy > p {
     margin: 23px 0 30px;
     font-size: 17px;
   }
 
-  .primary-cta {
+  #motu-landing .primary-cta {
     min-height: 62px;
     font-size: 16px;
   }
 
-  .primary-cta__arrow {
+  #motu-landing .primary-cta__arrow {
     width: 46px;
     height: 46px;
   }
 
-  .product-stage {
+  #motu-landing .product-stage {
     height: 600px;
     margin-top: 45px;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     width: 270px;
     height: 584px;
     left: 2%;
     top: 0;
   }
 
-  .phone--strength {
+  #motu-landing .phone--strength {
     width: 200px;
     height: 433px;
     right: -8%;
     top: 118px;
   }
 
-  .loop-section {
+  #motu-landing .loop-section {
     padding-top: 62px;
   }
 
-  .loop-copy {
+  #motu-landing .loop-copy {
     display: block;
     padding-left: 0;
   }
 
-  .loop-copy h2 {
+  #motu-landing .loop-copy h2 {
     margin: 18px 0;
   }
 
-  .steps {
+  #motu-landing .steps {
     grid-template-columns: 1fr;
     margin-top: 25px;
   }
 
-  .step-card {
+  #motu-landing .step-card {
     min-height: 620px;
     padding: 24px 18px 0;
   }
 
-  .step-card h3,
-  .step-number {
+  #motu-landing .step-card h3,
+#motu-landing .step-number {
     font-size: 17px;
   }
 
-  .screen-window {
+  #motu-landing .screen-window {
     height: 515px;
   }
 
-  .closing {
+  #motu-landing .closing {
     padding: 65px 0;
   }
 
-  .closing-inner {
+  #motu-landing .closing-inner {
     display: block;
   }
 
-  .closing h2 {
+  #motu-landing .closing h2 {
     margin-bottom: 32px;
     font-size: 45px;
   }
 
-  .site-footer__inner {
+  #motu-landing .site-footer__inner {
     grid-template-columns: 1fr;
     gap: 13px;
     padding: 35px 0;
@@ -948,65 +983,208 @@ a {
 }
 
 @media (max-width: 430px) {
-  .hero {
+  #motu-landing .hero {
     min-height: 1040px;
   }
 
-  .hero h1 {
+  #motu-landing .hero h1 {
     font-size: 47px;
   }
 
-  .product-stage {
+  #motu-landing .product-stage {
     height: 535px;
   }
 
-  .phone {
+  #motu-landing .phone {
     border-width: 5px;
     border-radius: 38px;
   }
 
-  .dynamic-island {
+  #motu-landing .dynamic-island {
     height: 18px;
     top: 8px;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     width: 226px;
     height: 489px;
   }
 
-  .phone--strength {
+  #motu-landing .phone--strength {
     width: 168px;
     height: 364px;
     right: -10%;
     top: 102px;
   }
 
-  .step-card {
+  #motu-landing .step-card {
     min-height: 560px;
   }
 
-  .screen-window {
+  #motu-landing .screen-window {
     height: 455px;
   }
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  #motu-landing {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  #motu-landing *,
+#motu-landing *::before,
+#motu-landing *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 
-  .reveal,
-  .reveal.is-pending {
+  #motu-landing .reveal,
+#motu-landing .reveal.is-pending {
     opacity: 1;
     transform: none;
   }
 }
+
+</style>
+
+<div id="motu-landing">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+
+      <header class="site-header shell">
+        <a class="brand" href="#contenido" aria-label="Mótu, inicio">
+          <img src="https://eduardohuesca.github.io/motu-web/assets/motu-mark-darkmode.svg" alt="" width="44" height="44">
+          <span class="brand-word"><span>m</span><span class="brand-o">o</span><span>tu</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Navegación principal">
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#entrenamientos">Entrenamientos</a>
+          <a href="#explora">Explora</a>
+          <a href="#progreso">Progreso</a>
+        </nav>
+
+        <div class="companion-chip" aria-label="Mótumotu, tu compañero">
+          <span>Tu compañero<br>te acompaña.</span>
+          <img src="https://eduardohuesca.github.io/motu-web/assets/motumotu.jpg" alt="Mótumotu" width="48" height="48">
+        </div>
+      </header>
+
+      <div class="hero-layout shell">
+        <div class="hero-copy reveal">
+          <span class="device-pill">iPhone + Apple Watch</span>
+          <h1 id="hero-title">Todo tu movimiento.<br>Por fin <span>conectado.</span></h1>
+          <p>Entrena. Explora. Mira cómo avanzas.</p>
+          <a class="primary-cta" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
+            <span>Solicitar acceso</span>
+            <span class="primary-cta__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="product-stage reveal" aria-label="Pantallas reales de Mótu">
+          <div class="product-shadow" aria-hidden="true"></div>
+
+          <figure class="phone phone--map">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/mapa-motu.jpg" alt="Mapa de Mótu mostrando Dartmouth y Halifax" width="690" height="1500">
+          </figure>
+
+          <figure class="phone phone--strength">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/fuerza-motu.jpg" alt="Sesión de fuerza de Mótu con press de banca" width="690" height="1500">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="loop-section" id="como-funciona" aria-labelledby="loop-title">
+      <div class="loop-track" aria-hidden="true"></div>
+      <div class="loop-end" aria-hidden="true">↻</div>
+
+      <div class="loop-layout shell">
+        <div class="loop-copy reveal">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2 id="loop-title">Un loop simple.<br>Resultados reales.</h2>
+          <p>Cuatro pasos que se conectan solos.<br>Tú solo muévete.</p>
+        </div>
+
+        <div class="steps" aria-label="El ciclo de Mótu">
+          <article class="step-card reveal" id="entrenamientos">
+            <header>
+              <span class="step-number">01</span>
+              <h3>Entrena</h3>
+            </header>
+            <div class="screen-window">
+              <img src="https://eduardohuesca.github.io/motu-web/assets/fuerza-motu.jpg" alt="Entrenamiento de fuerza en Mótu" width="690" height="1500">
+            </div>
+          </article>
+
+          <article class="step-card reveal" id="explora">
+            <header>
+              <span class="step-number">02</span>
+              <h3>Explora</h3>
+            </header>
+            <div class="screen-window">
+              <img src="https://eduardohuesca.github.io/motu-web/assets/mapa-motu.jpg" alt="Mapa y rutas reales de Mótu" width="690" height="1500">
+            </div>
+          </article>
+
+          <article class="step-card reveal" id="progreso">
+            <header>
+              <span class="step-number">03</span>
+              <h3>Mira tu progreso</h3>
+            </header>
+            <div class="screen-window">
+              <img src="https://eduardohuesca.github.io/motu-web/assets/progreso-motu.jpg" alt="Progreso de fuerza en Mótu" width="690" height="1500">
+            </div>
+          </article>
+
+          <article class="step-card reveal" id="constancia">
+            <header>
+              <span class="step-number">04</span>
+              <h3>Vuelve a empezar</h3>
+            </header>
+            <div class="screen-window">
+              <img src="https://eduardohuesca.github.io/motu-web/assets/constancia-motu.jpg" alt="Racha y constancia en Mótu" width="690" height="1500">
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-inner shell reveal">
+        <div>
+          <span class="eyebrow eyebrow--dark">Beta privada</span>
+          <h2 id="closing-title">Empieza a conectar todo lo que haces.</h2>
+        </div>
+        <a class="primary-cta primary-cta--light" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
+          <span>Solicitar acceso</span>
+          <span class="primary-cta__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <a class="brand brand--footer" href="#contenido" aria-label="Mótu, inicio">
+        <img src="https://eduardohuesca.github.io/motu-web/assets/motu-mark-darkmode.svg" alt="" width="36" height="36">
+        <span class="brand-word"><span>m</span><span class="brand-o">o</span><span>tu</span></span>
+      </a>
+      <p>Fuerza, rutas y progreso en un mismo lugar.</p>
+      <a href="mailto:support@mootuapp.com">support@mootuapp.com</a>
+    </div>
+  </footer>
+</div>

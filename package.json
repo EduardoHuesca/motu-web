@@ -2,6 +2,7 @@
   "name": "motu-public-landing",
   "private": true,
   "scripts": {
-    "test": "node --test tests/landing.test.mjs"
+    "build:squarespace": "node tools/build-squarespace.mjs",
+    "test": "npm run build:squarespace && node --test tests/landing.test.mjs"
   }
 }
