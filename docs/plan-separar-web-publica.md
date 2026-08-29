@@ -20,9 +20,9 @@ compilar la app.
 
 ## Decisión recomendada
 
-Crear ahora `EduardoHuesca/motu-web` como repositorio público independiente y
-publicarlo con GitHub Pages, reutilizando el precedente que ya funciona en
-`EduardoHuesca/motu-legal` para `legal.mootuapp.com`.
+Crear `EduardoHuesca/motu-web` como repositorio público independiente y usar
+GitHub Pages únicamente como vista previa comprobable. Squarespace seguirá
+siendo el alojamiento final porque Mótu ya tiene allí un plan anual activo.
 
 No integrar la propuesta #304 en `ciudad-desbloqueada`. Tras comprobar que el
 nuevo repositorio contiene exactamente la misma página, cerrar esa propuesta como
@@ -64,10 +64,10 @@ Mover el contenido actual de `website/` a la raíz:
 - un `README.md` corto con vista previa, pruebas y publicación
 - un flujo propio que ejecute `npm test`
 
-Configurar GitHub Pages desde `main`. El archivo `CNAME` y el dominio canónico
-`www.mootuapp.com` pertenecen a la segunda entrega: se añaden solo después de
-aprobar la vista publicada de GitHub Pages. Entonces se configura también el
-dominio raíz para que llegue al mismo sitio.
+Configurar GitHub Pages desde `main` como vista previa. Preparar además un paquete
+HTML y CSS para Squarespace que no requiera JavaScript, de modo que funcione en
+cualquier plan actual. GitHub conserva la fuente y las pruebas; Squarespace
+conserva la página pública.
 
 ### Repositorio de la app
 
@@ -79,16 +79,16 @@ dominio raíz para que llegue al mismo sitio.
 
 ### DNS y Squarespace
 
-Actualmente `mootuapp.com` redirige a `www.mootuapp.com` y ambos viven en
-Squarespace; `www` responde con acceso restringido. Eduardo deberá cambiar los
-registros DNS para GitHub Pages solo después de que la vista previa esté
-comprobada. Guardará los registros anteriores para poder volver atrás.
+`mootuapp.com` y `www.mootuapp.com` permanecen en Squarespace. No se cambian DNS,
+dominio, registros de correo ni proveedor. Eduardo sustituirá el contenido de la
+página únicamente después de comprobar la vista previa y conservará la versión
+anterior hasta validar escritorio y móvil.
 
 ## Riesgos concretos
 
-- Un cambio DNS incorrecto puede dejar el dominio sin responder durante la
-  propagación. Se mitiga comprobando primero la URL de GitHub Pages y conservando
-  los registros de Squarespace para reversión.
+- Una personalización de Squarespace puede alterar márgenes o estilos del
+  mockup. Se mitiga con un paquete aislado, sin JavaScript obligatorio, y una
+  comparación visual antes de sustituir la página actual.
 - Integrar #304 y copiar también la web produciría dos fuentes de verdad. La
   propuesta debe cerrarse, no integrarse, cuando el nuevo repositorio esté listo.
 - El repositorio será público y hará públicas las capturas. Esto es coherente con
@@ -106,7 +106,7 @@ Automáticas:
 - verificar que todas las imágenes y destinos internos existen;
 - impedir que se añada el enlace ficticio de TestFlight.
 
-Manuales antes del cambio DNS:
+Manuales antes de sustituir la página de Squarespace:
 
 - comparar la vista publicada con el mockup aprobado;
 - revisar escritorio, tableta y teléfono sin desplazamiento horizontal;
@@ -115,7 +115,7 @@ Manuales antes del cambio DNS:
 - comprobar que las cuatro capturas se cargan y que Mótumotu sigue siendo
   secundario.
 
-Manuales después del cambio DNS:
+Manuales después de actualizar Squarespace:
 
 - comprobar HTTPS en `mootuapp.com` y `www.mootuapp.com`;
 - comprobar que `legal.mootuapp.com` no cambió;
@@ -132,9 +132,9 @@ Manuales después del cambio DNS:
 ## Estimación
 
 - Extracción, controles y vista previa en GitHub Pages: entre una y dos horas.
-- Revisión visual y preparación del dominio: alrededor de una hora.
-- Cambio DNS: unos minutos de trabajo de Eduardo, más el tiempo externo de
-  propagación.
+- Revisión visual y preparación del bloque de Squarespace: alrededor de una hora.
+- Sustitución manual de la página de inicio: unos minutos de trabajo de Eduardo,
+  más una revisión final en escritorio y teléfono.
 
 Son dos entregas independientes: primero el repositorio con una vista previa;
-después, y solo con esa evidencia, el cambio de dominio.
+después, y solo con esa evidencia, la actualización manual en Squarespace.
