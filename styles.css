@@ -596,9 +596,14 @@ a {
 }
 
 .reveal {
+  opacity: 1;
+  transform: none;
+  transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
+}
+
+.reveal.is-pending {
   opacity: 0;
   transform: translateY(22px);
-  transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
 }
 
 .reveal.is-visible {
@@ -799,15 +804,18 @@ a {
     background: rgba(15,22,18,.98);
     box-shadow: 0 24px 50px rgba(0,0,0,.36);
     opacity: 0;
+    visibility: hidden;
     pointer-events: none;
     transform: translateY(-8px);
-    transition: opacity 180ms ease, transform 180ms ease;
+    transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms;
   }
 
   .site-nav.is-open {
     opacity: 1;
+    visibility: visible;
     pointer-events: auto;
     transform: translateY(0);
+    transition-delay: 0s;
   }
 
   .site-nav a {
@@ -993,7 +1001,8 @@ a {
     transition-duration: 0.01ms !important;
   }
 
-  .reveal {
+  .reveal,
+  .reveal.is-pending {
     opacity: 1;
     transform: none;
   }

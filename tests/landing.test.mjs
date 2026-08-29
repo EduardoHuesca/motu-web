@@ -7,6 +7,9 @@ import test from "node:test";
 const here = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(here, "..");
 const html = readFileSync(resolve(siteRoot, "index.html"), "utf8");
+const styles = readFileSync(resolve(siteRoot, "styles.css"), "utf8");
+const script = readFileSync(resolve(siteRoot, "script.js"), "utf8");
+const pagesWorkflow = readFileSync(resolve(siteRoot, ".github/workflows/pages.yml"), "utf8");
 
 test("la página usa la marca y la promesa aprobadas", () => {
   assert.match(html, /Todo tu movimiento\./);
@@ -45,4 +48,30 @@ test("la navegación apunta a secciones existentes", () => {
 test("solicitar acceso prepara un correo real y no inventa un enlace de TestFlight", () => {
   assert.match(html, /mailto:support@mootuapp\.com\?subject=Acceso%20a%20TestFlight/);
   assert.doesNotMatch(html, /testflight\.apple\.com\/join\/xxxx/);
+});
+
+test("el contenido sigue visible si JavaScript no se ejecuta", () => {
+  assert.match(styles, /\.reveal\s*\{[^}]*opacity:\s*1;/s);
+  assert.match(styles, /\.reveal\.is-pending\s*\{[^}]*opacity:\s*0;/s);
+  assert.match(script, /classList\.add\("is-pending"\)/);
+  assert.match(script, /classList\.remove\("is-pending"\)/);
+});
+
+test("el menú móvil cerrado no conserva enlaces enfocables invisibles", () => {
+  assert.match(styles, /\.site-nav\s*\{[^}]*visibility:\s*hidden;/s);
+  assert.match(styles, /\.site-nav\.is-open\s*\{[^}]*visibility:\s*visible;/s);
+});
+
+test("GitHub Pages prueba la página antes de publicarla", () => {
+  const testStep = pagesWorkflow.indexOf("run: npm test");
+  const deployStep = pagesWorkflow.indexOf("uses: actions/deploy-pages");
+  assert.notEqual(testStep, -1);
+  assert.notEqual(deployStep, -1);
+  assert.ok(testStep < deployStep);
+});
+
+test("la licencia OFL acompaña a Manrope", () => {
+  const licensePath = resolve(siteRoot, "assets/OFL.txt");
+  assert.equal(existsSync(licensePath), true);
+  assert.match(readFileSync(licensePath, "utf8"), /SIL OPEN FONT LICENSE Version 1\.1/);
 });

@@ -23,6 +23,9 @@ npm test
 Las pruebas comprueban la promesa principal, las capturas reales, la navegación,
 los textos alternativos y el destino para solicitar TestFlight.
 
+Manrope se distribuye bajo la SIL Open Font License 1.1, incluida en
+`assets/OFL.txt`.
+
 ## Publicación
 
 Todo cambio entra mediante una propuesta contra `main`. Al integrarse, GitHub

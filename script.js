@@ -25,16 +25,20 @@ if (menuButton && navigation) {
 const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 const reveals = document.querySelectorAll(".reveal");
 
-if (reducedMotion || !("IntersectionObserver" in window)) {
-  reveals.forEach((element) => element.classList.add("is-visible"));
-} else {
+if (!reducedMotion && "IntersectionObserver" in window) {
   const observer = new IntersectionObserver((entries, activeObserver) => {
     entries.forEach((entry) => {
       if (!entry.isIntersecting) return;
+      entry.target.classList.remove("is-pending");
       entry.target.classList.add("is-visible");
       activeObserver.unobserve(entry.target);
     });
   }, { threshold: 0.14 });
 
-  reveals.forEach((element) => observer.observe(element));
+  // El contenido nace visible: solo lo ocultamos cuando sabemos que la animación
+  // puede completarse. Así un script bloqueado nunca deja la página en blanco.
+  reveals.forEach((element) => {
+    element.classList.add("is-pending");
+    observer.observe(element);
+  });
 }
