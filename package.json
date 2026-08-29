@@ -1,0 +1,7 @@
+{
+  "name": "motu-public-landing",
+  "private": true,
+  "scripts": {
+    "test": "node --test tests/landing.test.mjs"
+  }
+}
