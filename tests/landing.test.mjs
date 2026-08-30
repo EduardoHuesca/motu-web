@@ -13,7 +13,7 @@ const pagesWorkflow = readFileSync(resolve(siteRoot, ".github/workflows/pages.ym
 const squarespaceBlock = readFileSync(resolve(siteRoot, "squarespace/motu-code-block.html"), "utf8");
 
 test("la página usa la marca y la promesa aprobadas", () => {
-  assert.match(html, /Todo tu movimiento\./);
+  assert.match(html, /Todo tu<br class="mobile-only-break"> movimiento\./);
   assert.match(html, /Por fin <span>conectado\.<\/span>/);
   assert.match(html, /Un loop simple\./);
   assert.match(html, /Resultados reales\./);

@@ -287,6 +287,10 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
   color: #16c77a;
 }
 
+#motu-landing .mobile-only-break {
+  display: none;
+}
+
 #motu-landing .hero-copy > p {
   margin: 27px 0 42px;
   color: var(--muted-dark);
@@ -1099,6 +1103,10 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
     margin-top: 4px;
   }
 
+  #motu-landing .mobile-only-break {
+    display: block;
+  }
+
   #motu-landing .hero-copy > p {
     margin: 21px 0 27px;
     font-size: 16px;
@@ -1357,7 +1365,7 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
       <div class="hero-layout shell">
         <div class="hero-copy reveal">
           <span class="device-pill">iPhone + Apple Watch</span>
-          <h1 id="hero-title">Todo tu movimiento.<br>Por fin <span>conectado.</span></h1>
+          <h1 id="hero-title">Todo tu<br class="mobile-only-break"> movimiento.<br>Por fin <span>conectado.</span></h1>
           <p>Entrena. Explora. Mira cómo avanzas.</p>
           <a class="primary-cta" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
             <span>Solicitar acceso</span>

@@ -252,6 +252,10 @@ a {
   color: #16c77a;
 }
 
+.mobile-only-break {
+  display: none;
+}
+
 .hero-copy > p {
   margin: 27px 0 42px;
   color: var(--muted-dark);
@@ -1062,6 +1066,10 @@ a {
   .hero h1 span {
     display: block;
     margin-top: 4px;
+  }
+
+  .mobile-only-break {
+    display: block;
   }
 
   .hero-copy > p {
