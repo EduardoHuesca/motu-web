@@ -13,10 +13,16 @@ const pagesWorkflow = readFileSync(resolve(siteRoot, ".github/workflows/pages.ym
 const squarespaceBlock = readFileSync(resolve(siteRoot, "squarespace/motu-code-block.html"), "utf8");
 
 test("la página usa la marca y la promesa aprobadas", () => {
-  assert.match(html, /Todo tu movimiento\./);
+  assert.match(html, /Todo tu<br class="mobile-only-break"> movimiento\./);
   assert.match(html, /Por fin <span>conectado\.<\/span>/);
   assert.match(html, /Un loop simple\./);
   assert.match(html, /Resultados reales\./);
+});
+
+test("el sitio usa el símbolo de Mótu como favicon compatible con buscadores", () => {
+  const favicon = "assets/motu-favicon.png";
+  assert.match(html, /<link rel="icon" href="assets\/motu-favicon\.png" type="image\/png" sizes="192x192">/);
+  assert.equal(existsSync(resolve(siteRoot, favicon)), true, `${favicon} debe existir`);
 });
 
 test("la escena usa tres pantallas reales y una captura real del Apple Watch", () => {
@@ -34,6 +40,14 @@ test("la escena usa tres pantallas reales y una captura real del Apple Watch", (
   assert.match(html, /cinema-phone--strength/);
   assert.match(html, /cinema-phone--map/);
   assert.match(html, /cinema-phone--progress/);
+});
+
+test("los dispositivos conservan una presentación física y el cierre tiene contraste", () => {
+  assert.ok((html.match(/phone-button--action/g) ?? []).length >= 5);
+  assert.ok((html.match(/phone-button--volume/g) ?? []).length >= 5);
+  assert.match(styles, /\.phone,\s*\n\.cinema-phone\s*\{[^}]*linear-gradient[^}]*transform-style:\s*preserve-3d;/s);
+  assert.match(styles, /@media \(max-width: 760px\)[\s\S]*?\.phone-scene\s*\{[^}]*display:\s*block;[^}]*perspective:\s*1100px;/);
+  assert.match(styles, /\.closing h2\s*\{[^}]*color:\s*var\(--cream\);/s);
 });
 
 test("la cuadrícula anterior desapareció por completo", () => {
