@@ -19,6 +19,12 @@ test("la página usa la marca y la promesa aprobadas", () => {
   assert.match(html, /Resultados reales\./);
 });
 
+test("el sitio usa el símbolo de Mótu como favicon compatible con buscadores", () => {
+  const favicon = "assets/motu-favicon.png";
+  assert.match(html, /<link rel="icon" href="assets\/motu-favicon\.png" type="image\/png" sizes="192x192">/);
+  assert.equal(existsSync(resolve(siteRoot, favicon)), true, `${favicon} debe existir`);
+});
+
 test("la escena usa tres pantallas reales y una captura real del Apple Watch", () => {
   for (const asset of [
     "assets/fuerza-motu.jpg",
