@@ -1,12 +1,47 @@
+<!--
+  Generado por npm run build:squarespace.
+  No editar a mano: index.html y styles.css son la fuente.
+-->
+<meta charset="utf-8">
+<style>
+
+html:has(#motu-landing),
+body:has(#motu-landing) {
+  margin: 0 !important;
+  overflow-x: hidden !important;
+  background: #080d0b !important;
+}
+
+body:has(#motu-landing) #header,
+body:has(#motu-landing) footer.sections {
+  display: none !important;
+}
+
+body:has(#motu-landing) #page,
+body:has(#motu-landing) .page-section:has(#motu-landing) > .content-wrapper {
+  max-width: none !important;
+  padding: 0 !important;
+}
+
+body:has(#motu-landing) .sqs-block-code:has(#motu-landing),
+body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
+  padding: 0 !important;
+}
+
+#motu-landing {
+  width: 100vw;
+  margin-left: calc(50% - 50vw);
+}
+
 @font-face {
   font-family: "Manrope";
-  src: url("assets/manrope.ttf") format("truetype");
+  src: url("https://eduardohuesca.github.io/motu-web/assets/manrope.ttf") format("truetype");
   font-style: normal;
   font-weight: 200 800;
   font-display: swap;
 }
 
-:root {
+#motu-landing {
   color-scheme: dark light;
   --ink: #191d1b;
   --ink-deep: #080d0b;
@@ -22,16 +57,16 @@
   --shell: min(1440px, calc(100% - 80px));
 }
 
-* {
+#motu-landing * {
   box-sizing: border-box;
 }
 
-html {
+#motu-landing {
   scroll-behavior: smooth;
   background: var(--ink-deep);
 }
 
-body {
+#motu-landing {
   margin: 0;
   overflow-x: hidden;
   color: var(--ink);
@@ -40,20 +75,20 @@ body {
   -webkit-font-smoothing: antialiased;
 }
 
-img {
+#motu-landing img {
   max-width: 100%;
 }
 
-a {
+#motu-landing a {
   color: inherit;
 }
 
-.shell {
+#motu-landing .shell {
   width: var(--shell);
   margin-inline: auto;
 }
 
-.sr-only {
+#motu-landing .sr-only {
   position: absolute;
   width: 1px;
   height: 1px;
@@ -65,7 +100,7 @@ a {
   border: 0;
 }
 
-.skip-link {
+#motu-landing .skip-link {
   position: fixed;
   z-index: 100;
   top: 12px;
@@ -77,11 +112,11 @@ a {
   transform: translateY(-140%);
 }
 
-.skip-link:focus {
+#motu-landing .skip-link:focus {
   transform: translateY(0);
 }
 
-.hero {
+#motu-landing .hero {
   min-height: 700px;
   position: relative;
   overflow: hidden;
@@ -92,14 +127,14 @@ a {
     linear-gradient(115deg, var(--ink-deep) 0%, var(--ink-soft) 56%, #070b09 100%);
 }
 
-.hero-glow {
+#motu-landing .hero-glow {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
   filter: blur(80px);
 }
 
-.hero-glow--one {
+#motu-landing .hero-glow--one {
   width: 460px;
   height: 460px;
   right: 18%;
@@ -107,7 +142,7 @@ a {
   background: rgba(47, 203, 133, 0.14);
 }
 
-.hero-glow--two {
+#motu-landing .hero-glow--two {
   width: 260px;
   height: 260px;
   left: 17%;
@@ -115,7 +150,7 @@ a {
   background: rgba(11, 145, 85, 0.12);
 }
 
-.site-header {
+#motu-landing .site-header {
   min-height: 96px;
   position: relative;
   z-index: 20;
@@ -125,7 +160,7 @@ a {
   gap: 64px;
 }
 
-.brand {
+#motu-landing .brand {
   display: inline-flex;
   align-items: center;
   gap: 9px;
@@ -133,29 +168,29 @@ a {
   text-decoration: none;
 }
 
-.brand img {
+#motu-landing .brand img {
   width: 46px;
   height: 46px;
 }
 
-.brand-word {
+#motu-landing .brand-word {
   display: inline-flex;
   font-size: 31px;
   font-weight: 800;
   letter-spacing: -0.04em;
 }
 
-.brand-o {
+#motu-landing .brand-o {
   color: var(--green-bright);
 }
 
-.site-nav {
+#motu-landing .site-nav {
   display: flex;
   align-items: center;
   gap: clamp(24px, 3vw, 48px);
 }
 
-.site-nav a {
+#motu-landing .site-nav a {
   position: relative;
   color: var(--muted-dark);
   font-size: 15px;
@@ -164,7 +199,7 @@ a {
   transition: color 180ms ease;
 }
 
-.site-nav a::after {
+#motu-landing .site-nav a::after {
   content: "";
   position: absolute;
   right: 0;
@@ -178,17 +213,17 @@ a {
   transition: transform 180ms ease;
 }
 
-.site-nav a:hover,
-.site-nav a:focus-visible {
+#motu-landing .site-nav a:hover,
+#motu-landing .site-nav a:focus-visible {
   color: var(--cream);
 }
 
-.site-nav a:hover::after,
-.site-nav a:focus-visible::after {
+#motu-landing .site-nav a:hover::after,
+#motu-landing .site-nav a:focus-visible::after {
   transform: scaleX(1);
 }
 
-.companion-chip {
+#motu-landing .companion-chip {
   display: flex;
   align-items: center;
   gap: 12px;
@@ -201,7 +236,7 @@ a {
   line-height: 1.24;
 }
 
-.companion-chip img {
+#motu-landing .companion-chip img {
   width: 48px;
   height: 48px;
   border: 2px solid var(--green);
@@ -209,11 +244,11 @@ a {
   object-fit: cover;
 }
 
-.menu-toggle {
+#motu-landing .menu-toggle {
   display: none;
 }
 
-.hero-layout {
+#motu-landing .hero-layout {
   min-height: 604px;
   display: grid;
   grid-template-columns: minmax(440px, 0.88fr) minmax(560px, 1.12fr);
@@ -221,13 +256,13 @@ a {
   gap: 12px;
 }
 
-.hero-copy {
+#motu-landing .hero-copy {
   position: relative;
   z-index: 10;
   padding: 16px 0 80px 30px;
 }
 
-.device-pill {
+#motu-landing .device-pill {
   display: inline-flex;
   margin-bottom: 30px;
   padding: 7px 13px;
@@ -238,7 +273,7 @@ a {
   font-weight: 500;
 }
 
-.hero h1 {
+#motu-landing .hero h1 {
   max-width: 680px;
   margin: 0;
   font-size: clamp(54px, 5vw, 78px);
@@ -247,18 +282,18 @@ a {
   font-weight: 800;
 }
 
-.hero h1 span {
+#motu-landing .hero h1 span {
   color: #16c77a;
 }
 
-.hero-copy > p {
+#motu-landing .hero-copy > p {
   margin: 27px 0 42px;
   color: var(--muted-dark);
   font-size: clamp(18px, 1.55vw, 23px);
   line-height: 1.45;
 }
 
-.primary-cta {
+#motu-landing .primary-cta {
   display: inline-flex;
   align-items: center;
   gap: 44px;
@@ -274,25 +309,25 @@ a {
   transition: transform 220ms cubic-bezier(.2,.8,.2,1), box-shadow 220ms ease;
 }
 
-.primary-cta:hover {
+#motu-landing .primary-cta:hover {
   box-shadow: 0 20px 48px rgba(18, 203, 123, 0.28);
   transform: translateY(-3px);
 }
 
-.primary-cta:active {
+#motu-landing .primary-cta:active {
   transform: scale(0.97);
 }
 
-.primary-cta:focus-visible,
-.site-nav a:focus-visible,
-.brand:focus-visible,
-.site-footer a:focus-visible,
-.menu-toggle:focus-visible {
+#motu-landing .primary-cta:focus-visible,
+#motu-landing .site-nav a:focus-visible,
+#motu-landing .brand:focus-visible,
+#motu-landing .site-footer a:focus-visible,
+#motu-landing .menu-toggle:focus-visible {
   outline: 3px solid var(--green-bright);
   outline-offset: 5px;
 }
 
-.primary-cta__arrow {
+#motu-landing .primary-cta__arrow {
   width: 50px;
   height: 50px;
   display: grid;
@@ -304,14 +339,14 @@ a {
   font-weight: 500;
 }
 
-.product-stage {
+#motu-landing .product-stage {
   align-self: end;
   height: 604px;
   position: relative;
   min-width: 0;
 }
 
-.product-stage::before {
+#motu-landing .product-stage::before {
   content: "";
   position: absolute;
   width: 540px;
@@ -323,7 +358,7 @@ a {
   filter: blur(2px);
 }
 
-.product-shadow {
+#motu-landing .product-shadow {
   position: absolute;
   z-index: 1;
   right: -4%;
@@ -334,8 +369,8 @@ a {
   filter: blur(10px);
 }
 
-.phone,
-.cinema-phone {
+#motu-landing .phone,
+#motu-landing .cinema-phone {
   position: absolute;
   overflow: hidden;
   margin: 0;
@@ -349,8 +384,8 @@ a {
     0 0 0 1px rgba(255,255,255,.08);
 }
 
-.phone::before,
-.cinema-phone::before {
+#motu-landing .phone::before,
+#motu-landing .cinema-phone::before {
   content: "";
   position: absolute;
   z-index: 3;
@@ -361,8 +396,8 @@ a {
   transform: rotate(5deg);
 }
 
-.phone::after,
-.cinema-phone::after {
+#motu-landing .phone::after,
+#motu-landing .cinema-phone::after {
   content: "";
   position: absolute;
   z-index: 2;
@@ -372,15 +407,15 @@ a {
   pointer-events: none;
 }
 
-.phone img,
-.cinema-phone img {
+#motu-landing .phone img,
+#motu-landing .cinema-phone img {
   width: 100%;
   height: 100%;
   display: block;
   object-fit: cover;
 }
 
-.dynamic-island {
+#motu-landing .dynamic-island {
   position: absolute;
   z-index: 4;
   top: 11px;
@@ -393,7 +428,7 @@ a {
   box-shadow: inset 0 0 1px rgba(255,255,255,.22);
 }
 
-.phone--map {
+#motu-landing .phone--map {
   z-index: 3;
   width: 326px;
   height: 706px;
@@ -402,7 +437,7 @@ a {
   transform: rotate(-1deg);
 }
 
-.phone--strength {
+#motu-landing .phone--strength {
   z-index: 4;
   width: 266px;
   height: 576px;
@@ -411,7 +446,7 @@ a {
   transform: rotate(4.3deg);
 }
 
-.apple-watch {
+#motu-landing .apple-watch {
   position: absolute;
   z-index: 7;
   width: 194px;
@@ -420,13 +455,13 @@ a {
   filter: drop-shadow(0 34px 32px rgba(0, 0, 0, .5));
 }
 
-.apple-watch--hero {
+#motu-landing .apple-watch--hero {
   right: -7%;
   top: 250px;
   transform: rotate(2.5deg);
 }
 
-.watch-band {
+#motu-landing .watch-band {
   position: absolute;
   z-index: 0;
   left: 40px;
@@ -438,21 +473,21 @@ a {
   box-shadow: inset 0 0 18px rgba(255,255,255,.045);
 }
 
-.watch-band--top {
+#motu-landing .watch-band--top {
   top: 0;
   height: 130px;
   border-radius: 52px 52px 23px 23px;
   transform: perspective(140px) rotateX(-4deg);
 }
 
-.watch-band--bottom {
+#motu-landing .watch-band--bottom {
   bottom: 0;
   height: 137px;
   border-radius: 23px 23px 58px 58px;
   transform: perspective(140px) rotateX(4deg);
 }
 
-.watch-case {
+#motu-landing .watch-case {
   position: absolute;
   z-index: 3;
   top: 92px;
@@ -470,7 +505,7 @@ a {
     0 10px 22px rgba(0,0,0,.42);
 }
 
-.watch-screen {
+#motu-landing .watch-screen {
   width: 100%;
   height: 100%;
   display: block;
@@ -481,7 +516,7 @@ a {
   box-shadow: inset 0 0 18px rgba(255,255,255,.055);
 }
 
-.watch-screen img {
+#motu-landing .watch-screen img {
   width: 108%;
   height: 108%;
   max-width: none;
@@ -490,7 +525,7 @@ a {
   transform: translate(-4%, -4%);
 }
 
-.watch-crown {
+#motu-landing .watch-crown {
   position: absolute;
   z-index: 2;
   top: 143px;
@@ -503,7 +538,7 @@ a {
   box-shadow: 3px 4px 12px rgba(0,0,0,.6);
 }
 
-.watch-button {
+#motu-landing .watch-button {
   position: absolute;
   z-index: 1;
   top: 205px;
@@ -514,7 +549,7 @@ a {
   background: #262927;
 }
 
-.loop-section {
+#motu-landing .loop-section {
   position: relative;
   overflow: hidden;
   padding: 74px 0 66px;
@@ -524,7 +559,7 @@ a {
     linear-gradient(145deg, #fbfaf7 0%, #f5f4ef 61%, #eef5f1 100%);
 }
 
-.loop-layout {
+#motu-landing .loop-layout {
   min-height: 682px;
   display: grid;
   grid-template-columns: minmax(260px, .67fr) minmax(760px, 2.33fr);
@@ -532,13 +567,13 @@ a {
   gap: 18px;
 }
 
-.loop-copy {
+#motu-landing .loop-copy {
   position: relative;
   z-index: 8;
   padding: 0 0 20px 16px;
 }
 
-.eyebrow {
+#motu-landing .eyebrow {
   color: var(--green);
   font-size: 11px;
   font-weight: 800;
@@ -546,8 +581,8 @@ a {
   text-transform: uppercase;
 }
 
-.loop-copy h2,
-.closing h2 {
+#motu-landing .loop-copy h2,
+#motu-landing .closing h2 {
   margin: 21px 0 18px;
   font-size: clamp(35px, 3.2vw, 49px);
   line-height: 1.06;
@@ -555,20 +590,20 @@ a {
   font-weight: 800;
 }
 
-.loop-copy p {
+#motu-landing .loop-copy p {
   margin: 0;
   color: var(--muted);
   font-size: 14px;
   line-height: 1.55;
 }
 
-.scene-legend {
+#motu-landing .scene-legend {
   display: grid;
   gap: 12px;
   margin-top: 34px;
 }
 
-.scene-legend span {
+#motu-landing .scene-legend span {
   display: flex;
   align-items: center;
   gap: 10px;
@@ -577,7 +612,7 @@ a {
   font-weight: 700;
 }
 
-.scene-legend i {
+#motu-landing .scene-legend i {
   width: 7px;
   height: 7px;
   border-radius: 50%;
@@ -585,7 +620,7 @@ a {
   box-shadow: 0 0 0 5px rgba(47,203,133,.11);
 }
 
-.phone-scene {
+#motu-landing .phone-scene {
   position: relative;
   z-index: 4;
   min-width: 0;
@@ -593,7 +628,7 @@ a {
   perspective: 1400px;
 }
 
-.scene-halo {
+#motu-landing .scene-halo {
   position: absolute;
   z-index: 0;
   top: 51%;
@@ -606,7 +641,7 @@ a {
   transform: translate(-50%, -50%);
 }
 
-.scene-floor {
+#motu-landing .scene-floor {
   position: absolute;
   z-index: 1;
   right: 1%;
@@ -621,24 +656,24 @@ a {
   transform: perspective(260px) rotateX(61deg);
 }
 
-.cinema-phone {
+#motu-landing .cinema-phone {
   scroll-margin-top: 24px;
   transition: transform 500ms cubic-bezier(.2,.8,.2,1), filter 500ms ease;
 }
 
-.phone-scene:hover .cinema-phone--strength {
+#motu-landing .phone-scene:hover .cinema-phone--strength {
   transform: rotate(-8deg) translate3d(-9px, -8px, 0);
 }
 
-.phone-scene:hover .cinema-phone--map {
+#motu-landing .phone-scene:hover .cinema-phone--map {
   transform: translateX(-50%) translate3d(0, -12px, 34px);
 }
 
-.phone-scene:hover .cinema-phone--progress {
+#motu-landing .phone-scene:hover .cinema-phone--progress {
   transform: rotate(7.5deg) translate3d(9px, -7px, 0);
 }
 
-.cinema-phone--strength {
+#motu-landing .cinema-phone--strength {
   z-index: 2;
   top: 87px;
   left: 5%;
@@ -648,7 +683,7 @@ a {
   transform: rotate(-10deg) translateZ(-30px);
 }
 
-.cinema-phone--map {
+#motu-landing .cinema-phone--map {
   z-index: 5;
   top: 20px;
   left: 50%;
@@ -662,7 +697,7 @@ a {
     0 0 0 1px rgba(255,255,255,.08);
 }
 
-.cinema-phone--progress {
+#motu-landing .cinema-phone--progress {
   z-index: 3;
   top: 82px;
   right: 4%;
@@ -672,14 +707,14 @@ a {
   transform: rotate(9deg) translateZ(-18px);
 }
 
-.loop-light {
+#motu-landing .loop-light {
   position: absolute;
   border-radius: 50%;
   pointer-events: none;
   filter: blur(70px);
 }
 
-.loop-light--one {
+#motu-landing .loop-light--one {
   top: 80px;
   right: 19%;
   width: 270px;
@@ -687,7 +722,7 @@ a {
   background: rgba(47,203,133,.1);
 }
 
-.loop-light--two {
+#motu-landing .loop-light--two {
   right: -120px;
   bottom: -120px;
   width: 360px;
@@ -695,7 +730,7 @@ a {
   background: rgba(11,145,85,.08);
 }
 
-.closing {
+#motu-landing .closing {
   padding: 80px 0;
   color: var(--cream);
   background:
@@ -703,33 +738,33 @@ a {
     var(--ink-soft);
 }
 
-.closing-inner {
+#motu-landing .closing-inner {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 60px;
 }
 
-.closing h2 {
+#motu-landing .closing h2 {
   max-width: 750px;
   margin-bottom: 0;
   font-size: clamp(42px, 4.4vw, 67px);
 }
 
-.eyebrow--dark {
+#motu-landing .eyebrow--dark {
   color: var(--green-bright);
 }
 
-.primary-cta--light {
+#motu-landing .primary-cta--light {
   flex: 0 0 auto;
 }
 
-.site-footer {
+#motu-landing .site-footer {
   color: #acb3af;
   background: var(--ink-deep);
 }
 
-.site-footer__inner {
+#motu-landing .site-footer__inner {
   min-height: 130px;
   display: grid;
   grid-template-columns: auto 1fr auto;
@@ -737,94 +772,94 @@ a {
   gap: 40px;
 }
 
-.brand--footer .brand-word {
+#motu-landing .brand--footer .brand-word {
   font-size: 25px;
 }
 
-.brand--footer img {
+#motu-landing .brand--footer img {
   width: 36px;
   height: 36px;
 }
 
-.site-footer p {
+#motu-landing .site-footer p {
   margin: 0;
   font-size: 13px;
 }
 
-.site-footer__inner > a:last-child {
+#motu-landing .site-footer__inner > a:last-child {
   font-size: 13px;
   text-decoration-color: rgba(255,255,255,.25);
   text-underline-offset: 5px;
 }
 
-.reveal {
+#motu-landing .reveal {
   opacity: 1;
   transform: none;
   transition: opacity 600ms ease, transform 700ms cubic-bezier(.2,.8,.2,1);
 }
 
-.reveal.is-pending {
+#motu-landing .reveal.is-pending {
   opacity: 0;
   transform: translateY(22px);
 }
 
-.reveal.is-visible {
+#motu-landing .reveal.is-visible {
   opacity: 1;
   transform: translateY(0);
 }
 
 @media (max-width: 1260px) {
-  :root {
+  #motu-landing {
     --shell: min(1140px, calc(100% - 48px));
   }
 
-  .site-header {
+  #motu-landing .site-header {
     gap: 36px;
   }
 
-  .companion-chip {
+  #motu-landing .companion-chip {
     display: none;
   }
 
-  .site-header {
+  #motu-landing .site-header {
     grid-template-columns: auto 1fr;
   }
 
-  .hero-layout {
+  #motu-landing .hero-layout {
     grid-template-columns: minmax(390px, .84fr) minmax(500px, 1.16fr);
   }
 
-  .hero-copy {
+  #motu-landing .hero-copy {
     padding-left: 0;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     left: 2%;
   }
 
-  .apple-watch--hero {
+  #motu-landing .apple-watch--hero {
     right: -9%;
     transform: scale(.88) rotate(2.5deg);
     transform-origin: center bottom;
   }
 
-  .loop-layout {
+  #motu-landing .loop-layout {
     grid-template-columns: 240px minmax(0, 1fr);
     gap: 10px;
   }
 
-  .cinema-phone--strength {
+  #motu-landing .cinema-phone--strength {
     left: 2%;
     width: 238px;
     height: 517px;
   }
 
-  .cinema-phone--map {
+  #motu-landing .cinema-phone--map {
     width: 278px;
     height: 604px;
   }
 
-  .cinema-phone--progress {
+  #motu-landing .cinema-phone--progress {
     right: 1%;
     width: 243px;
     height: 528px;
@@ -832,55 +867,55 @@ a {
 }
 
 @media (max-width: 980px) {
-  .hero {
+  #motu-landing .hero {
     min-height: 650px;
   }
 
-  .site-nav {
+  #motu-landing .site-nav {
     gap: 20px;
   }
 
-  .hero-layout {
+  #motu-landing .hero-layout {
     min-height: 554px;
     grid-template-columns: 46% 54%;
   }
 
-  .hero h1 {
+  #motu-landing .hero h1 {
     font-size: clamp(42px, 6vw, 58px);
   }
 
-  .hero-copy > p {
+  #motu-landing .hero-copy > p {
     margin-bottom: 30px;
   }
 
-  .product-stage {
+  #motu-landing .product-stage {
     height: 554px;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     width: 255px;
     height: 552px;
   }
 
-  .phone--strength {
+  #motu-landing .phone--strength {
     width: 205px;
     height: 444px;
     right: 5%;
     top: 92px;
   }
 
-  .apple-watch--hero {
+  #motu-landing .apple-watch--hero {
     right: -13%;
     top: 270px;
     transform: scale(.72) rotate(2.5deg);
   }
 
-  .loop-layout {
+  #motu-landing .loop-layout {
     grid-template-columns: 1fr;
     gap: 30px;
   }
 
-  .loop-copy {
+  #motu-landing .loop-copy {
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: end;
@@ -888,15 +923,15 @@ a {
     padding-top: 0;
   }
 
-  .loop-copy .eyebrow {
+  #motu-landing .loop-copy .eyebrow {
     grid-column: 1 / -1;
   }
 
-  .loop-copy h2 {
+  #motu-landing .loop-copy h2 {
     margin: 0;
   }
 
-  .scene-legend {
+  #motu-landing .scene-legend {
     grid-column: 1 / -1;
     display: flex;
     flex-wrap: wrap;
@@ -904,7 +939,7 @@ a {
     margin-top: 6px;
   }
 
-  .phone-scene {
+  #motu-landing .phone-scene {
     width: min(850px, 100%);
     height: 650px;
     margin-inline: auto;
@@ -912,27 +947,27 @@ a {
 }
 
 @media (max-width: 760px) {
-  :root {
+  #motu-landing {
     --shell: min(100% - 32px, 680px);
   }
 
-  .site-header {
+  #motu-landing .site-header {
     min-height: 82px;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
   }
 
-  .brand img {
+  #motu-landing .brand img {
     width: 39px;
     height: 39px;
   }
 
-  .brand-word {
+  #motu-landing .brand-word {
     font-size: 27px;
   }
 
-  .menu-toggle {
+  #motu-landing .menu-toggle {
     width: 44px;
     height: 44px;
     place-content: center;
@@ -943,11 +978,11 @@ a {
     background: rgba(255,255,255,.055);
   }
 
-  html.menu-ready .menu-toggle {
+  #motu-landing.menu-ready .menu-toggle {
     display: grid;
   }
 
-  .menu-toggle__line {
+  #motu-landing .menu-toggle__line {
     width: 19px;
     height: 2px;
     display: block;
@@ -956,15 +991,15 @@ a {
     transition: transform 180ms ease;
   }
 
-  .menu-toggle[aria-expanded="true"] .menu-toggle__line:first-child {
+  #motu-landing .menu-toggle[aria-expanded="true"] .menu-toggle__line:first-child {
     transform: translateY(4.5px) rotate(45deg);
   }
 
-  .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(2) {
+  #motu-landing .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(2) {
     transform: translateY(-4.5px) rotate(-45deg);
   }
 
-  .site-nav {
+  #motu-landing .site-nav {
     position: static;
     order: 3;
     width: 100%;
@@ -981,7 +1016,7 @@ a {
     transform: none;
   }
 
-  html.menu-ready .site-nav {
+  #motu-landing.menu-ready .site-nav {
     position: absolute;
     top: 72px;
     right: 0;
@@ -995,7 +1030,7 @@ a {
     transition: opacity 180ms ease, transform 180ms ease, visibility 0s linear 180ms;
   }
 
-  html.menu-ready .site-nav.is-open {
+  #motu-landing.menu-ready .site-nav.is-open {
     opacity: 1;
     visibility: visible;
     pointer-events: auto;
@@ -1003,112 +1038,112 @@ a {
     transition-delay: 0s;
   }
 
-  .site-nav a {
+  #motu-landing .site-nav a {
     padding: 14px 15px;
     border-radius: 12px;
   }
 
-  .site-nav a:hover {
+  #motu-landing .site-nav a:hover {
     background: rgba(255,255,255,.05);
   }
 
-  .site-nav a::after {
+  #motu-landing .site-nav a::after {
     display: none;
   }
 
-  .hero {
+  #motu-landing .hero {
     min-height: 1180px;
   }
 
-  .hero-layout {
+  #motu-landing .hero-layout {
     min-height: 0;
     display: block;
   }
 
-  .hero-copy {
+  #motu-landing .hero-copy {
     padding: 58px 0 0;
   }
 
-  .device-pill {
+  #motu-landing .device-pill {
     margin-bottom: 22px;
   }
 
-  .hero h1 {
+  #motu-landing .hero h1 {
     font-size: clamp(46px, 12vw, 66px);
   }
 
-  .hero-copy > p {
+  #motu-landing .hero-copy > p {
     margin: 23px 0 30px;
     font-size: 17px;
   }
 
-  .primary-cta {
+  #motu-landing .primary-cta {
     min-height: 62px;
     font-size: 16px;
   }
 
-  .primary-cta__arrow {
+  #motu-landing .primary-cta__arrow {
     width: 46px;
     height: 46px;
   }
 
-  .product-stage {
+  #motu-landing .product-stage {
     height: 655px;
     margin-top: 45px;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     width: 270px;
     height: 584px;
     left: 2%;
     top: 0;
   }
 
-  .phone--strength {
+  #motu-landing .phone--strength {
     width: 200px;
     height: 433px;
     right: -3%;
     top: 118px;
   }
 
-  .apple-watch--hero {
+  #motu-landing .apple-watch--hero {
     right: -4%;
     top: 345px;
     transform: scale(.72) rotate(2.5deg);
     transform-origin: top right;
   }
 
-  .loop-section {
+  #motu-landing .loop-section {
     padding: 70px 0 52px;
   }
 
-  .loop-copy {
+  #motu-landing .loop-copy {
     display: block;
     padding-left: 0;
   }
 
-  .loop-copy h2 {
+  #motu-landing .loop-copy h2 {
     margin: 18px 0;
   }
 
-  .scene-legend {
+  #motu-landing .scene-legend {
     display: flex;
     gap: 12px 24px;
     margin-top: 28px;
   }
 
-  .phone-scene {
+  #motu-landing .phone-scene {
     width: 100%;
     height: 565px;
     margin-top: 3px;
   }
 
-  .scene-halo {
+  #motu-landing .scene-halo {
     width: 460px;
     height: 380px;
   }
 
-  .cinema-phone--strength {
+  #motu-landing .cinema-phone--strength {
     top: 92px;
     left: -9%;
     width: 190px;
@@ -1116,13 +1151,13 @@ a {
     transform: rotate(-9deg);
   }
 
-  .cinema-phone--map {
+  #motu-landing .cinema-phone--map {
     top: 5px;
     width: 236px;
     height: 513px;
   }
 
-  .cinema-phone--progress {
+  #motu-landing .cinema-phone--progress {
     top: 88px;
     right: -9%;
     width: 192px;
@@ -1130,20 +1165,20 @@ a {
     transform: rotate(8deg);
   }
 
-  .closing {
+  #motu-landing .closing {
     padding: 65px 0;
   }
 
-  .closing-inner {
+  #motu-landing .closing-inner {
     display: block;
   }
 
-  .closing h2 {
+  #motu-landing .closing h2 {
     margin-bottom: 32px;
     font-size: 45px;
   }
 
-  .site-footer__inner {
+  #motu-landing .site-footer__inner {
     grid-template-columns: 1fr;
     gap: 13px;
     padding: 35px 0;
@@ -1151,68 +1186,68 @@ a {
 }
 
 @media (max-width: 430px) {
-  .hero {
+  #motu-landing .hero {
     min-height: 1110px;
   }
 
-  .hero h1 {
+  #motu-landing .hero h1 {
     font-size: 47px;
   }
 
-  .product-stage {
+  #motu-landing .product-stage {
     height: 590px;
   }
 
-  .phone,
-  .cinema-phone {
+  #motu-landing .phone,
+#motu-landing .cinema-phone {
     border-width: 5px;
     border-radius: 38px;
   }
 
-  .dynamic-island {
+  #motu-landing .dynamic-island {
     height: 18px;
     top: 8px;
   }
 
-  .phone--map {
+  #motu-landing .phone--map {
     width: 226px;
     height: 489px;
   }
 
-  .phone--strength {
+  #motu-landing .phone--strength {
     width: 168px;
     height: 364px;
     right: -6%;
     top: 102px;
   }
 
-  .apple-watch--hero {
+  #motu-landing .apple-watch--hero {
     right: -6%;
     top: 330px;
     transform: scale(.62) rotate(2.5deg);
   }
 
-  .loop-copy h2 {
+  #motu-landing .loop-copy h2 {
     font-size: 39px;
   }
 
-  .phone-scene {
+  #motu-landing .phone-scene {
     height: 510px;
   }
 
-  .cinema-phone--strength {
+  #motu-landing .cinema-phone--strength {
     top: 82px;
     left: -18%;
     width: 166px;
     height: 360px;
   }
 
-  .cinema-phone--map {
+  #motu-landing .cinema-phone--map {
     width: 214px;
     height: 465px;
   }
 
-  .cinema-phone--progress {
+  #motu-landing .cinema-phone--progress {
     top: 79px;
     right: -18%;
     width: 168px;
@@ -1221,21 +1256,159 @@ a {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  html {
+  #motu-landing {
     scroll-behavior: auto;
   }
 
-  *,
-  *::before,
-  *::after {
+  #motu-landing *,
+#motu-landing *::before,
+#motu-landing *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
   }
 
-  .reveal,
-  .reveal.is-pending {
+  #motu-landing .reveal,
+#motu-landing .reveal.is-pending {
     opacity: 1;
     transform: none;
   }
 }
+
+</style>
+
+<div id="motu-landing">
+<a class="skip-link" href="#contenido">Saltar al contenido</a>
+
+  <main id="contenido">
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero-glow hero-glow--one" aria-hidden="true"></div>
+      <div class="hero-glow hero-glow--two" aria-hidden="true"></div>
+
+      <header class="site-header shell">
+        <a class="brand" href="#contenido" aria-label="Mótu, inicio">
+          <img src="https://eduardohuesca.github.io/motu-web/assets/motu-mark-darkmode.svg" alt="" width="44" height="44">
+          <span class="brand-word"><span>m</span><span class="brand-o">o</span><span>tu</span></span>
+        </a>
+
+        <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="site-navigation">
+          <span class="menu-toggle__line"></span>
+          <span class="menu-toggle__line"></span>
+          <span class="sr-only">Abrir menú</span>
+        </button>
+
+        <nav class="site-nav" id="site-navigation" aria-label="Navegación principal">
+          <a href="#como-funciona">Cómo funciona</a>
+          <a href="#entrenamientos">Entrenamientos</a>
+          <a href="#explora">Explora</a>
+          <a href="#progreso">Progreso</a>
+        </nav>
+
+        <div class="companion-chip" aria-label="Mótumotu, tu compañero">
+          <span>Tu compañero<br>te acompaña.</span>
+          <img src="https://eduardohuesca.github.io/motu-web/assets/motumotu.jpg" alt="Mótumotu" width="48" height="48">
+        </div>
+      </header>
+
+      <div class="hero-layout shell">
+        <div class="hero-copy reveal">
+          <span class="device-pill">iPhone + Apple Watch</span>
+          <h1 id="hero-title">Todo tu movimiento.<br>Por fin <span>conectado.</span></h1>
+          <p>Entrena. Explora. Mira cómo avanzas.</p>
+          <a class="primary-cta" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
+            <span>Solicitar acceso</span>
+            <span class="primary-cta__arrow" aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div class="product-stage reveal" aria-label="Pantallas reales de Mótu">
+          <div class="product-shadow" aria-hidden="true"></div>
+
+          <figure class="phone phone--map">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/mapa-motu.jpg" alt="Mapa de Mótu mostrando Dartmouth y Halifax" width="690" height="1500">
+          </figure>
+
+          <figure class="phone phone--strength">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/fuerza-motu.jpg" alt="Sesión de fuerza de Mótu con press de banca" width="690" height="1500">
+          </figure>
+
+          <figure class="apple-watch apple-watch--hero">
+            <span class="watch-band watch-band--top" aria-hidden="true"></span>
+            <span class="watch-band watch-band--bottom" aria-hidden="true"></span>
+            <span class="watch-crown" aria-hidden="true"></span>
+            <span class="watch-button" aria-hidden="true"></span>
+            <span class="watch-case">
+              <span class="watch-screen">
+                <img src="https://eduardohuesca.github.io/motu-web/assets/apple-watch-motu.jpg" alt="Mótu en Apple Watch preparado para iniciar un entrenamiento" width="239" height="268">
+              </span>
+            </span>
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="loop-section" id="como-funciona" aria-labelledby="loop-title">
+      <div class="loop-light loop-light--one" aria-hidden="true"></div>
+      <div class="loop-light loop-light--two" aria-hidden="true"></div>
+
+      <div class="loop-layout shell">
+        <div class="loop-copy reveal">
+          <span class="eyebrow">Cómo funciona</span>
+          <h2 id="loop-title">Un loop simple.<br>Resultados reales.</h2>
+          <p>Fuerza, rutas y progreso se conectan solos.<br>Tú solo muévete.</p>
+          <div class="scene-legend" aria-label="Las tres partes de Mótu">
+            <span><i aria-hidden="true"></i>Entrena</span>
+            <span><i aria-hidden="true"></i>Explora</span>
+            <span><i aria-hidden="true"></i>Avanza</span>
+          </div>
+        </div>
+
+        <div class="phone-scene reveal" aria-label="Pantallas reales de Fuerza, Mapa y Progreso en Mótu">
+          <div class="scene-halo" aria-hidden="true"></div>
+          <div class="scene-floor" aria-hidden="true"></div>
+
+          <figure class="cinema-phone cinema-phone--strength" id="entrenamientos">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/fuerza-motu.jpg" alt="Entrenamiento de fuerza en Mótu" width="690" height="1500">
+          </figure>
+
+          <figure class="cinema-phone cinema-phone--map" id="explora">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/mapa-motu.jpg" alt="Mapa de una ruta real en Mótu" width="690" height="1500">
+          </figure>
+
+          <figure class="cinema-phone cinema-phone--progress" id="progreso">
+            <span class="dynamic-island" aria-hidden="true"></span>
+            <img src="https://eduardohuesca.github.io/motu-web/assets/progreso-motu.jpg" alt="Progreso de fuerza en Mótu" width="690" height="1500">
+          </figure>
+        </div>
+      </div>
+    </section>
+
+    <section class="closing" aria-labelledby="closing-title">
+      <div class="closing-inner shell reveal">
+        <div>
+          <span class="eyebrow eyebrow--dark">Beta privada</span>
+          <h2 id="closing-title">Empieza a conectar todo lo que haces.</h2>
+        </div>
+        <a class="primary-cta primary-cta--light" href="mailto:support@mootuapp.com?subject=Acceso%20a%20TestFlight%20de%20M%C3%B3tu">
+          <span>Solicitar acceso</span>
+          <span class="primary-cta__arrow" aria-hidden="true">→</span>
+        </a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell site-footer__inner">
+      <a class="brand brand--footer" href="#contenido" aria-label="Mótu, inicio">
+        <img src="https://eduardohuesca.github.io/motu-web/assets/motu-mark-darkmode.svg" alt="" width="36" height="36">
+        <span class="brand-word"><span>m</span><span class="brand-o">o</span><span>tu</span></span>
+      </a>
+      <p>Fuerza, rutas y progreso en un mismo lugar.</p>
+      <a href="mailto:support@mootuapp.com">support@mootuapp.com</a>
+    </div>
+  </footer>
+</div>
