@@ -10,6 +10,7 @@ const html = readFileSync(resolve(siteRoot, "index.html"), "utf8");
 const styles = readFileSync(resolve(siteRoot, "styles.css"), "utf8");
 const script = readFileSync(resolve(siteRoot, "script.js"), "utf8");
 const pagesWorkflow = readFileSync(resolve(siteRoot, ".github/workflows/pages.yml"), "utf8");
+const squarespaceBlock = readFileSync(resolve(siteRoot, "squarespace/motu-code-block.html"), "utf8");
 
 test("la página usa la marca y la promesa aprobadas", () => {
   assert.match(html, /Todo tu movimiento\./);
@@ -18,16 +19,31 @@ test("la página usa la marca y la promesa aprobadas", () => {
   assert.match(html, /Resultados reales\./);
 });
 
-test("las cuatro pantallas reales están presentes", () => {
+test("la escena usa tres pantallas reales y una captura real del Apple Watch", () => {
   for (const asset of [
     "assets/fuerza-motu.jpg",
     "assets/mapa-motu.jpg",
     "assets/progreso-motu.jpg",
-    "assets/constancia-motu.jpg"
+    "assets/apple-watch-motu.jpg"
   ]) {
     assert.match(html, new RegExp(asset.replace(".", "\\.")));
     assert.equal(existsSync(resolve(siteRoot, asset)), true, `${asset} debe existir`);
   }
+  assert.match(html, /class="apple-watch apple-watch--hero"/);
+  assert.match(html, /class="phone-scene reveal"/);
+  assert.match(html, /cinema-phone--strength/);
+  assert.match(html, /cinema-phone--map/);
+  assert.match(html, /cinema-phone--progress/);
+});
+
+test("la cuadrícula anterior desapareció por completo", () => {
+  assert.doesNotMatch(html, /class="steps"/);
+  assert.doesNotMatch(html, /class="step-card/);
+  assert.doesNotMatch(html, /class="loop-track"/);
+  assert.doesNotMatch(html, /class="step-number"/);
+  assert.doesNotMatch(html, /assets\/constancia-motu\.jpg/);
+  assert.doesNotMatch(styles, /\.step-card\s*\{/);
+  assert.doesNotMatch(styles, /\.loop-track\s*\{/);
 });
 
 test("cada imagen visible tiene texto alternativo", () => {
@@ -77,4 +93,14 @@ test("la licencia OFL acompaña a Manrope", () => {
   const licensePath = resolve(siteRoot, "assets/OFL.txt");
   assert.equal(existsSync(licensePath), true);
   assert.match(readFileSync(licensePath, "utf8"), /SIL OPEN FONT LICENSE Version 1\.1/);
+});
+
+test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
+  assert.match(squarespaceBlock, /<meta charset="utf-8">/);
+  assert.match(squarespaceBlock, /<div id="motu-landing">/);
+  assert.match(squarespaceBlock, /#motu-landing \.hero/);
+  assert.match(squarespaceBlock, /https:\/\/eduardohuesca\.github\.io\/motu-web\/assets\/apple-watch-motu\.jpg/);
+  assert.match(squarespaceBlock, /cinema-phone--map/);
+  assert.doesNotMatch(squarespaceBlock, /<script/i);
+  assert.doesNotMatch(squarespaceBlock, /src="assets\//);
 });
