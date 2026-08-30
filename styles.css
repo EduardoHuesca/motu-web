@@ -319,13 +319,15 @@ a {
 .product-stage::before {
   content: "";
   position: absolute;
-  width: 540px;
-  height: 540px;
-  left: 14%;
-  top: 34px;
+  width: 590px;
+  height: 590px;
+  left: 8%;
+  top: -4px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(38, 198, 128, .12), transparent 68%);
-  filter: blur(2px);
+  background:
+    radial-gradient(circle at 38% 30%, rgba(255,255,255,.14), transparent 17%),
+    radial-gradient(circle, rgba(38, 198, 128, .16), transparent 66%);
+  filter: blur(5px);
 }
 
 .product-shadow {
@@ -334,55 +336,102 @@ a {
   right: -4%;
   bottom: 1px;
   left: 3%;
-  height: 55px;
-  background: radial-gradient(ellipse, rgba(0, 0, 0, .72), transparent 69%);
-  filter: blur(10px);
+  height: 72px;
+  background:
+    radial-gradient(ellipse at 52% 42%, rgba(0,0,0,.82), transparent 62%),
+    radial-gradient(ellipse, rgba(47,203,133,.18), transparent 70%);
+  filter: blur(12px);
 }
 
 .phone,
 .cinema-phone {
   position: absolute;
-  overflow: hidden;
+  overflow: visible;
   margin: 0;
-  border: 7px solid #252927;
-  border-radius: 48px;
-  background: #090b0a;
+  padding: 7px;
+  border: 1px solid rgba(232,239,235,.52);
+  border-radius: 50px;
+  background:
+    linear-gradient(145deg, #aeb6b2 0%, #3c423f 8%, #111513 24%, #050706 53%, #313734 82%, #929a96 96%, #d7ddda 100%);
   isolation: isolate;
+  transform-style: preserve-3d;
   box-shadow:
-    0 35px 80px rgba(0, 0, 0, .48),
-    inset 0 0 0 1px rgba(255,255,255,.28),
-    0 0 0 1px rgba(255,255,255,.08);
+    0 52px 92px rgba(0,0,0,.43),
+    0 18px 34px rgba(0,0,0,.28),
+    -3px 0 8px rgba(255,255,255,.12),
+    4px 0 10px rgba(0,0,0,.42),
+    inset 0 0 0 1px rgba(255,255,255,.34),
+    inset 0 0 0 3px rgba(0,0,0,.5);
 }
 
 .phone::before,
 .cinema-phone::before {
   content: "";
   position: absolute;
-  z-index: 3;
-  inset: -20% 42% 28% -32%;
-  background: linear-gradient(122deg, rgba(255,255,255,.22), rgba(255,255,255,0) 63%);
-  opacity: .23;
+  z-index: 5;
+  inset: 8px;
+  border-radius: 41px;
+  background:
+    linear-gradient(118deg, rgba(255,255,255,.28) 0%, rgba(255,255,255,.08) 16%, transparent 39%),
+    linear-gradient(300deg, rgba(255,255,255,.09), transparent 28%);
+  opacity: .34;
   pointer-events: none;
-  transform: rotate(5deg);
 }
 
 .phone::after,
 .cinema-phone::after {
   content: "";
   position: absolute;
-  z-index: 2;
-  inset: 0;
-  border-radius: 40px;
-  box-shadow: inset 11px 0 18px rgba(255,255,255,.05), inset -8px 0 18px rgba(0,0,0,.13);
+  z-index: 4;
+  inset: 6px;
+  border: 1px solid rgba(0,0,0,.9);
+  border-radius: 43px;
+  box-shadow:
+    inset 10px 0 18px rgba(255,255,255,.045),
+    inset -10px 0 18px rgba(0,0,0,.16),
+    0 0 0 1px rgba(255,255,255,.06);
   pointer-events: none;
 }
 
 .phone img,
 .cinema-phone img {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   display: block;
+  overflow: hidden;
+  border-radius: 41px;
   object-fit: cover;
+  box-shadow: inset 0 0 0 1px rgba(255,255,255,.08);
+}
+
+.phone-button {
+  position: absolute;
+  z-index: 0;
+  display: block;
+  border: 1px solid rgba(255,255,255,.18);
+  background: linear-gradient(180deg, #777e7a, #171b19 20% 82%, #555b58);
+  box-shadow: 0 3px 7px rgba(0,0,0,.48);
+}
+
+.phone-button--action {
+  top: 27%;
+  right: -5px;
+  width: 5px;
+  height: 58px;
+  border-radius: 0 4px 4px 0;
+}
+
+.phone-button--volume {
+  top: 24%;
+  left: -5px;
+  width: 5px;
+  height: 44px;
+  border-radius: 4px 0 0 4px;
+  box-shadow:
+    0 61px 0 -1px #242926,
+    0 3px 7px rgba(0,0,0,.48);
 }
 
 .dynamic-island {
@@ -395,7 +444,9 @@ a {
   border-radius: 999px;
   background: #000;
   transform: translateX(-50%);
-  box-shadow: inset 0 0 1px rgba(255,255,255,.22);
+  box-shadow:
+    inset 0 0 1px rgba(255,255,255,.22),
+    0 1px 4px rgba(0,0,0,.46);
 }
 
 .phone--map {
@@ -404,7 +455,8 @@ a {
   height: 706px;
   left: 8%;
   top: -15px;
-  transform: rotate(-1deg);
+  transform: perspective(1400px) rotateY(5deg) rotateZ(-1.5deg);
+  transform-origin: center bottom;
 }
 
 .phone--strength {
@@ -413,7 +465,8 @@ a {
   height: 576px;
   right: 1%;
   top: 95px;
-  transform: rotate(4.3deg);
+  transform: perspective(1400px) rotateY(-8deg) rotateZ(4.3deg);
+  transform-origin: center bottom;
 }
 
 .apple-watch {
@@ -596,6 +649,7 @@ a {
   min-width: 0;
   height: 682px;
   perspective: 1400px;
+  transform-style: preserve-3d;
 }
 
 .scene-halo {
@@ -606,8 +660,10 @@ a {
   width: 610px;
   height: 460px;
   border-radius: 50%;
-  background: radial-gradient(ellipse, rgba(32,194,121,.19), rgba(32,194,121,.04) 43%, transparent 72%);
-  filter: blur(20px);
+  background:
+    radial-gradient(circle at 34% 30%, rgba(255,255,255,.72), transparent 20%),
+    radial-gradient(ellipse, rgba(32,194,121,.22), rgba(32,194,121,.04) 43%, transparent 72%);
+  filter: blur(24px);
   transform: translate(-50%, -50%);
 }
 
@@ -617,12 +673,12 @@ a {
   right: 1%;
   bottom: 3px;
   left: 1%;
-  height: 94px;
+  height: 112px;
   border-radius: 50%;
   background:
-    radial-gradient(ellipse, rgba(5,16,11,.2), transparent 65%),
-    radial-gradient(ellipse, rgba(25,198,118,.2), transparent 45%);
-  filter: blur(13px);
+    radial-gradient(ellipse at 50% 38%, rgba(5,16,11,.36), transparent 61%),
+    radial-gradient(ellipse, rgba(25,198,118,.22), transparent 48%);
+  filter: blur(15px);
   transform: perspective(260px) rotateX(61deg);
 }
 
@@ -632,15 +688,15 @@ a {
 }
 
 .phone-scene:hover .cinema-phone--strength {
-  transform: rotate(-8deg) translate3d(-9px, -8px, 0);
+  transform: perspective(1250px) rotateY(10deg) rotateZ(-8deg) translate3d(-9px, -8px, -14px);
 }
 
 .phone-scene:hover .cinema-phone--map {
-  transform: translateX(-50%) translate3d(0, -12px, 34px);
+  transform: translateX(-50%) perspective(1250px) rotateX(.6deg) translate3d(0, -12px, 52px);
 }
 
 .phone-scene:hover .cinema-phone--progress {
-  transform: rotate(7.5deg) translate3d(9px, -7px, 0);
+  transform: perspective(1250px) rotateY(-9deg) rotateZ(7deg) translate3d(9px, -7px, -8px);
 }
 
 .cinema-phone--strength {
@@ -649,8 +705,9 @@ a {
   left: 5%;
   width: 258px;
   height: 561px;
-  filter: saturate(.92) brightness(.97);
-  transform: rotate(-10deg) translateZ(-30px);
+  filter: saturate(.96) brightness(.99);
+  transform: perspective(1250px) rotateY(12deg) rotateZ(-10deg) translateZ(-30px);
+  transform-origin: right bottom;
 }
 
 .cinema-phone--map {
@@ -659,12 +716,13 @@ a {
   left: 50%;
   width: 292px;
   height: 635px;
-  transform: translateX(-50%) translateZ(40px);
+  transform: translateX(-50%) perspective(1250px) rotateX(.6deg) translateZ(48px);
   box-shadow:
-    0 42px 92px rgba(0,0,0,.33),
-    0 0 48px rgba(31,197,121,.11),
-    inset 0 0 0 1px rgba(255,255,255,.28),
-    0 0 0 1px rgba(255,255,255,.08);
+    0 62px 100px rgba(0,0,0,.39),
+    0 19px 38px rgba(0,0,0,.24),
+    0 0 58px rgba(31,197,121,.14),
+    inset 0 0 0 1px rgba(255,255,255,.34),
+    inset 0 0 0 3px rgba(0,0,0,.5);
 }
 
 .cinema-phone--progress {
@@ -673,8 +731,9 @@ a {
   right: 4%;
   width: 263px;
   height: 572px;
-  filter: saturate(.95) brightness(.98);
-  transform: rotate(9deg) translateZ(-18px);
+  filter: saturate(.97) brightness(.99);
+  transform: perspective(1250px) rotateY(-11deg) rotateZ(9deg) translateZ(-18px);
+  transform-origin: left bottom;
 }
 
 .loop-light {
@@ -718,7 +777,11 @@ a {
 .closing h2 {
   max-width: 750px;
   margin-bottom: 0;
+  color: var(--cream);
   font-size: clamp(42px, 4.4vw, 67px);
+  white-space: normal;
+  overflow-wrap: normal;
+  text-wrap: balance;
 }
 
 .eyebrow--dark {
@@ -1101,7 +1164,7 @@ a {
     height: 504px;
     left: 50%;
     top: 0;
-    transform: translateX(-67%) rotate(-2deg);
+    transform: translateX(-67%) perspective(1100px) rotateY(4deg) rotateZ(-2deg);
   }
 
   .phone--strength {
@@ -1109,6 +1172,7 @@ a {
     height: 347px;
     right: 8%;
     top: 80px;
+    transform: perspective(1100px) rotateY(-7deg) rotateZ(4deg);
   }
 
   .apple-watch--hero {
@@ -1139,58 +1203,62 @@ a {
 
   .phone-scene {
     width: 100%;
-    height: auto;
+    height: 520px;
     min-height: 0;
-    display: grid;
-    gap: 30px;
-    margin-top: 26px;
-    padding: 16px 0 24px;
-    perspective: none;
+    display: block;
+    margin-top: 24px;
+    padding: 0;
+    perspective: 1100px;
   }
 
   .scene-halo,
   .scene-floor {
-    display: none;
+    display: block;
   }
 
   .cinema-phone {
-    position: relative;
-    top: auto;
-    right: auto;
-    left: auto;
-    width: min(74vw, 260px);
-    height: auto;
-    aspect-ratio: 690 / 1500;
+    position: absolute;
+    width: 178px;
+    height: 387px;
   }
 
   .cinema-phone--strength {
-    justify-self: start;
-    margin-left: 2%;
-    transform: rotate(-3deg);
+    z-index: 2;
+    top: 86px;
+    left: 1%;
+    margin-left: 0;
+    transform: perspective(1100px) rotateY(11deg) rotateZ(-8deg) translateZ(-24px);
   }
 
   .cinema-phone--map {
-    justify-self: end;
-    margin-right: 1%;
-    transform: rotate(2deg);
+    z-index: 5;
+    top: 18px;
+    left: 50%;
+    width: 210px;
+    height: 456px;
+    margin-right: 0;
+    transform: translateX(-50%) perspective(1100px) translateZ(36px);
   }
 
   .cinema-phone--progress {
-    justify-self: start;
-    margin-left: 8%;
-    transform: rotate(-2deg);
+    z-index: 3;
+    top: 84px;
+    right: 1%;
+    left: auto;
+    margin-left: 0;
+    transform: perspective(1100px) rotateY(-10deg) rotateZ(8deg) translateZ(-16px);
   }
 
   .phone-scene:hover .cinema-phone--strength {
-    transform: rotate(-3deg);
+    transform: perspective(1100px) rotateY(11deg) rotateZ(-8deg) translateZ(-24px);
   }
 
   .phone-scene:hover .cinema-phone--map {
-    transform: rotate(2deg);
+    transform: translateX(-50%) perspective(1100px) translateZ(36px);
   }
 
   .phone-scene:hover .cinema-phone--progress {
-    transform: rotate(-2deg);
+    transform: perspective(1100px) rotateY(-10deg) rotateZ(8deg) translateZ(-16px);
   }
 
   .closing {
@@ -1203,7 +1271,7 @@ a {
 
   .closing h2 {
     margin-bottom: 32px;
-    font-size: 45px;
+    font-size: clamp(38px, 10.5vw, 45px);
   }
 
   .site-footer__inner {
@@ -1228,8 +1296,26 @@ a {
 
   .phone,
   .cinema-phone {
-    border-width: 5px;
+    padding: 5px;
+    border-width: 1px;
     border-radius: 38px;
+  }
+
+  .phone img,
+  .cinema-phone img {
+    border-radius: 32px;
+  }
+
+  .phone::before,
+  .cinema-phone::before {
+    inset: 6px;
+    border-radius: 32px;
+  }
+
+  .phone::after,
+  .cinema-phone::after {
+    inset: 4px;
+    border-radius: 34px;
   }
 
   .dynamic-island {
@@ -1241,7 +1327,7 @@ a {
     width: 216px;
     height: 469px;
     left: 50%;
-    transform: translateX(-70%) rotate(-2deg);
+    transform: translateX(-70%) perspective(1050px) rotateY(4deg) rotateZ(-2deg);
   }
 
   .phone--strength {
@@ -1249,6 +1335,7 @@ a {
     height: 317px;
     right: 8%;
     top: 82px;
+    transform: perspective(1050px) rotateY(-7deg) rotateZ(4deg);
   }
 
   .apple-watch--hero {
@@ -1261,14 +1348,34 @@ a {
     font-size: 35px;
   }
 
+  .closing h2 {
+    font-size: 36px;
+  }
+
   .phone-scene {
-    height: auto;
-    gap: 24px;
+    height: 480px;
   }
 
   .cinema-phone {
-    width: min(76vw, 250px);
-    height: auto;
+    width: 154px;
+    height: 335px;
+  }
+
+  .cinema-phone--strength {
+    top: 88px;
+    left: 1%;
+  }
+
+  .cinema-phone--map {
+    top: 20px;
+    left: 50%;
+    width: 192px;
+    height: 417px;
+  }
+
+  .cinema-phone--progress {
+    top: 88px;
+    right: 1%;
   }
 }
 

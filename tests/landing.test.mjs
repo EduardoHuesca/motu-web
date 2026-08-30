@@ -42,6 +42,14 @@ test("la escena usa tres pantallas reales y una captura real del Apple Watch", (
   assert.match(html, /cinema-phone--progress/);
 });
 
+test("los dispositivos conservan una presentación física y el cierre tiene contraste", () => {
+  assert.ok((html.match(/phone-button--action/g) ?? []).length >= 5);
+  assert.ok((html.match(/phone-button--volume/g) ?? []).length >= 5);
+  assert.match(styles, /\.phone,\s*\n\.cinema-phone\s*\{[^}]*linear-gradient[^}]*transform-style:\s*preserve-3d;/s);
+  assert.match(styles, /@media \(max-width: 760px\)[\s\S]*?\.phone-scene\s*\{[^}]*display:\s*block;[^}]*perspective:\s*1100px;/);
+  assert.match(styles, /\.closing h2\s*\{[^}]*color:\s*var\(--cream\);/s);
+});
+
 test("la cuadrícula anterior desapareció por completo", () => {
   assert.doesNotMatch(html, /class="steps"/);
   assert.doesNotMatch(html, /class="step-card/);
