@@ -120,7 +120,9 @@ a {
   position: relative;
   z-index: 20;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  /* Cuatro columnas y no tres: la marca, el menú, el botón de entrar y el
+     compañero. El botón necesita su propia celda para no depender del menú. */
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 64px;
 }
@@ -157,6 +159,9 @@ a {
 
 .site-nav a {
   position: relative;
+  /* Sin esto, al añadir el botón de entrar «Cómo funciona» se partía en dos
+     líneas alrededor de 768 px y descuadraba la cabecera entera. */
+  white-space: nowrap;
   color: var(--muted-dark);
   font-size: 15px;
   font-weight: 500;
@@ -186,6 +191,33 @@ a {
 .site-nav a:hover::after,
 .site-nav a:focus-visible::after {
   transform: scaleX(1);
+}
+
+.portal-login {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+  border: 1px solid rgba(27, 214, 135, 0.45);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(27, 214, 135, 0.10);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+.portal-login:hover {
+  border-color: var(--green-bright);
+  background: rgba(27, 214, 135, 0.18);
+  transform: translateY(-1px);
+}
+
+.portal-login:focus-visible {
+  outline: 3px solid var(--green-bright);
+  outline-offset: 3px;
 }
 
 .companion-chip {
@@ -855,7 +887,10 @@ a {
   }
 
   .site-header {
-    grid-template-columns: auto 1fr;
+    /* Tres columnas y no dos: al esconderse el compañero, el botón de entrar
+       ocupa su sitio. Con dos se caía a una segunda fila y quedaba huérfano
+       debajo de la marca. */
+    grid-template-columns: auto 1fr auto;
   }
 
   .hero-layout {
@@ -906,6 +941,15 @@ a {
 
   .site-nav {
     gap: 20px;
+  }
+
+  .site-header {
+    gap: 24px;
+  }
+
+  .portal-login {
+    padding: 0 16px;
+    font-size: 14px;
   }
 
   .hero-layout {
@@ -1031,6 +1075,16 @@ a {
 
   .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(2) {
     transform: translateY(-4.5px) rotate(-45deg);
+  }
+
+  .portal-login {
+    order: 2;
+    /* Se queda en 44 px: es el mínimo para tocarlo con el dedo sin fallar, y
+       lo mismo que mide la hamburguesa que tiene al lado. Se estrecha por los
+       lados, no por arriba. */
+    min-height: 44px;
+    padding: 0 15px;
+    font-size: 14px;
   }
 
   .site-nav {
