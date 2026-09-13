@@ -155,7 +155,9 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
   position: relative;
   z-index: 20;
   display: grid;
-  grid-template-columns: auto 1fr auto;
+  /* Cuatro columnas y no tres: la marca, el menú, el botón de entrar y el
+     compañero. El botón necesita su propia celda para no depender del menú. */
+  grid-template-columns: auto 1fr auto auto;
   align-items: center;
   gap: 64px;
 }
@@ -192,6 +194,9 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
 
 #motu-landing .site-nav a {
   position: relative;
+  /* Sin esto, al añadir el botón de entrar «Cómo funciona» se partía en dos
+     líneas alrededor de 768 px y descuadraba la cabecera entera. */
+  white-space: nowrap;
   color: var(--muted-dark);
   font-size: 15px;
   font-weight: 500;
@@ -221,6 +226,33 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
 #motu-landing .site-nav a:hover::after,
 #motu-landing .site-nav a:focus-visible::after {
   transform: scaleX(1);
+}
+
+#motu-landing .portal-login {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  padding: 0 20px;
+  border: 1px solid rgba(27, 214, 135, 0.45);
+  border-radius: 999px;
+  color: var(--cream);
+  background: rgba(27, 214, 135, 0.10);
+  font-size: 15px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-decoration: none;
+  transition: background 180ms ease, border-color 180ms ease, transform 180ms ease;
+}
+
+#motu-landing .portal-login:hover {
+  border-color: var(--green-bright);
+  background: rgba(27, 214, 135, 0.18);
+  transform: translateY(-1px);
+}
+
+#motu-landing .portal-login:focus-visible {
+  outline: 3px solid var(--green-bright);
+  outline-offset: 3px;
 }
 
 #motu-landing .companion-chip {
@@ -890,7 +922,10 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
   }
 
   #motu-landing .site-header {
-    grid-template-columns: auto 1fr;
+    /* Tres columnas y no dos: al esconderse el compañero, el botón de entrar
+       ocupa su sitio. Con dos se caía a una segunda fila y quedaba huérfano
+       debajo de la marca. */
+    grid-template-columns: auto 1fr auto;
   }
 
   #motu-landing .hero-layout {
@@ -941,6 +976,15 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
 
   #motu-landing .site-nav {
     gap: 20px;
+  }
+
+  #motu-landing .site-header {
+    gap: 24px;
+  }
+
+  #motu-landing .portal-login {
+    padding: 0 16px;
+    font-size: 14px;
   }
 
   #motu-landing .hero-layout {
@@ -1066,6 +1110,16 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
 
   #motu-landing .menu-toggle[aria-expanded="true"] .menu-toggle__line:nth-child(2) {
     transform: translateY(-4.5px) rotate(-45deg);
+  }
+
+  #motu-landing .portal-login {
+    order: 2;
+    /* Se queda en 44 px: es el mínimo para tocarlo con el dedo sin fallar, y
+       lo mismo que mide la hamburguesa que tiene al lado. Se estrecha por los
+       lados, no por arriba. */
+    min-height: 44px;
+    padding: 0 15px;
+    font-size: 14px;
   }
 
   #motu-landing .site-nav {
@@ -1462,6 +1516,15 @@ body:has(#motu-landing) .sqs-block-code:has(#motu-landing) .sqs-block-content {
           <a href="#explora">Explora</a>
           <a href="#progreso">Progreso</a>
         </nav>
+
+        <!-- Va FUERA de .site-nav a propósito: en móvil el menú se pliega
+             detrás de la hamburguesa, y un botón de entrar que hay que buscar
+             en un menú no es un botón de entrar. Este se ve siempre.
+             La dirección es la de la beta privada; cuando el portal tenga su
+             propio dominio, se cambia aquí y en nada más. -->
+        <a class="portal-login" href="https://motu-analytics-web.vercel.app/acceso">
+          Entrar al portal
+        </a>
 
         <div class="companion-chip" aria-label="Mótumotu, tu compañero">
           <span>Tu compañero<br>te acompaña.</span>

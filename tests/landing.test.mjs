@@ -118,3 +118,34 @@ test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
   assert.doesNotMatch(squarespaceBlock, /<script/i);
   assert.doesNotMatch(squarespaceBlock, /src="assets\//);
 });
+
+test("la portada lleva un botón de entrar al portal, visible también en móvil", () => {
+  // Tiene que estar FUERA de <nav>: en móvil el menú se pliega detrás de la
+  // hamburguesa, y un botón de entrar escondido en un menú no sirve de nada.
+  assert.match(html, /<a class="portal-login" href="https:\/\/[^"]+\/acceso">/);
+  assert.match(html, /Entrar al portal/);
+
+  const nav = html.slice(html.indexOf('<nav class="site-nav"'), html.indexOf("</nav>"));
+  assert.doesNotMatch(nav, /portal-login/, "el botón no puede vivir dentro del menú");
+
+  // Y su destino es https, para que la sesión nunca viaje en claro.
+  const destino = html.match(/class="portal-login" href="([^"]+)"/)[1];
+  assert.match(destino, /^https:\/\//);
+
+  // Estilos: alcanzable con el dedo y con foco visible para el teclado.
+  // Ninguna regla puede bajar el boton de 44 px, que es el minimo para
+  // tocarlo con el dedo sin fallar. La primera version lo dejaba en 40 px
+  // dentro del media query del telefono, que es justo donde mas importa.
+  // Las reglas que no mencionan min-height heredan el general y estan bien.
+  const reglas = styles.match(/\.portal-login\s*\{[^}]*\}/gs) ?? [];
+  assert.ok(reglas.length >= 2, "debe haber al menos la regla general y la de movil");
+  const alturas = reglas
+    .map((regla) => regla.match(/min-height:\s*(\d+)px;/))
+    .filter(Boolean)
+    .map((m) => Number(m[1]));
+  assert.ok(alturas.length >= 2, "el general y el de movil deben fijar min-height");
+  for (const alto of alturas) {
+    assert.ok(alto >= 44, `una regla deja el boton en ${alto}px, por debajo de 44`);
+  }
+  assert.match(styles, /\.portal-login:focus-visible\s*\{[^}]*outline:/s);
+});
