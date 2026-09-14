@@ -113,10 +113,31 @@ test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
   assert.match(squarespaceBlock, /<meta charset="utf-8">/);
   assert.match(squarespaceBlock, /<div id="motu-landing">/);
   assert.match(squarespaceBlock, /#motu-landing \.hero/);
-  assert.match(squarespaceBlock, /https:\/\/eduardohuesca\.github\.io\/motu-web\/assets\/apple-watch-motu\.jpg/);
+  assert.match(squarespaceBlock, /https:\/\/assets\.mootuapp\.com\/assets\/apple-watch-motu\.jpg/);
   assert.match(squarespaceBlock, /cinema-phone--map/);
   assert.doesNotMatch(squarespaceBlock, /<script/i);
   assert.doesNotMatch(squarespaceBlock, /src="assets\//);
+});
+
+test("las imágenes salen de un dominio de Mótu, no del de la cuenta de GitHub", () => {
+  // La cicatriz: Pages sirve por defecto en `<cuenta>.github.io`, así que cada
+  // imagen de la portada llevaba el nombre real de una persona dentro de su URL.
+  // Con la portada pública, bastaba con mirar el código fuente para leerlo. La
+  // identidad pública de Mótu es la marca.
+  assert.doesNotMatch(squarespaceBlock, /github\.io/i);
+  assert.doesNotMatch(squarespaceBlock, /github\.com/i);
+});
+
+test("el dominio del CNAME y el de las imágenes son el mismo", () => {
+  // Si se cambia uno y no el otro, Pages sirve en un sitio y la portada pide las
+  // imágenes en otro: el fallo no se ve en el repositorio, se ve en la web, en
+  // forma de portada sin fotos.
+  const cname = readFileSync(resolve(siteRoot, "CNAME"), "utf8").trim();
+  assert.match(cname, /^[a-z0-9.-]+$/);
+  assert.ok(
+    squarespaceBlock.includes(`https://${cname}/assets/`),
+    `El bloque de Squarespace no pide las imágenes a ${cname}`,
+  );
 });
 
 test("la portada lleva un botón de entrar al portal, visible también en móvil", () => {
