@@ -4,7 +4,12 @@ import { fileURLToPath } from "node:url";
 
 const toolsDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(toolsDirectory, "..");
-const assetBase = "https://eduardohuesca.github.io/motu-web/assets/";
+// Dominio propio, y no el de GitHub Pages por defecto: aquel lleva el nombre
+// de la cuenta dentro de la URL, así que cada imagen de la portada publicaba
+// el nombre real de una persona a quien mirase el código fuente. La identidad
+// pública de Mótu es la marca. El archivo CNAME de la raíz es lo que hace que
+// Pages sirva este dominio; sin el registro DNS puesto, esto no resuelve.
+const assetBase = "https://assets.mootuapp.com/assets/";
 const wrapper = "#motu-landing";
 
 const index = readFileSync(resolve(siteRoot, "index.html"), "utf8");
