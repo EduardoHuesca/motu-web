@@ -21,8 +21,10 @@ test("la página usa la marca y la promesa aprobadas", () => {
 
 test("el sitio usa el símbolo de Mótu como favicon compatible con buscadores", () => {
   const favicon = "assets/motu-favicon.png";
+  const faviconSource = readFileSync(resolve(siteRoot, "assets/motu-favicon-source.svg"), "utf8");
   assert.match(html, /<link rel="icon" href="assets\/motu-favicon\.png" type="image\/png" sizes="192x192">/);
   assert.equal(existsSync(resolve(siteRoot, favicon)), true, `${favicon} debe existir`);
+  assert.doesNotMatch(faviconSource, /<rect\b/, "el favicon no debe incluir un fondo opaco");
 });
 
 test("la escena usa tres pantallas reales y una captura real del Apple Watch", () => {
