@@ -113,7 +113,8 @@ test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
   assert.match(squarespaceBlock, /<meta charset="utf-8">/);
   assert.match(squarespaceBlock, /<div id="motu-landing">/);
   assert.match(squarespaceBlock, /#motu-landing \.hero/);
-  assert.match(squarespaceBlock, /https:\/\/eduardohuesca\.github\.io\/motu-web\/assets\/apple-watch-motu\.jpg/);
+  assert.match(squarespaceBlock, /https:\/\/recursos\.mootuapp\.com\/assets\/apple-watch-motu\.jpg/);
+  assert.doesNotMatch(squarespaceBlock, /github\.io/);
   assert.match(squarespaceBlock, /cinema-phone--map/);
   assert.doesNotMatch(squarespaceBlock, /<script/i);
   assert.doesNotMatch(squarespaceBlock, /src="assets\//);
