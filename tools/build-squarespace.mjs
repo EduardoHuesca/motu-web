@@ -62,10 +62,30 @@ body:has(${wrapper}) .sqs-block-code:has(${wrapper}),
 body:has(${wrapper}) .sqs-block-code:has(${wrapper}) .sqs-block-content {
   padding: 0 !important;
 }
+`;
+
+// Ancho completo, medido en Squarespace el 19 nov 2026.
+//
+// Antes se estiraba la portada con `width: 100vw; margin-left: calc(50% - 50vw)`.
+// Eso solo funciona si la caja que la contiene está centrada, y aquí no lo
+// está: el editor de Squarespace (Fluid Engine) mete el bloque en una celda de
+// su rejilla — en computadora, 161 px pegada a la izquierda; en el teléfono,
+// a 26 px del borde. Además `body { margin: 0 }` de styles.css, que aquí se
+// vuelve `#motu-landing { margin: 0 }`, anulaba el margen. Resultado: la
+// portada empezaba en la celda y medía 100vw desde ahí, así que su borde
+// derecho quedaba fuera de la pantalla y «Entrar al portal» salía cortado.
+//
+// Ahora la celda ocupa la rejilla entera (con sus márgenes laterales) y la
+// portada la llena al 100 %. No depende de dónde esté la celda ni del ancho de
+// la barra de desplazamiento. Va al final para que nada lo pise.
+const fullBleed = `
+body:has(${wrapper}) .fe-block:has(${wrapper}) {
+  grid-column: 1 / -1 !important;
+}
 
 ${wrapper} {
-  width: 100vw;
-  margin-left: calc(50% - 50vw);
+  width: 100%;
+  margin-left: 0;
 }
 `;
 
@@ -81,6 +101,7 @@ const output = `<!--
 <style>
 ${squarespaceReset}
 ${scopedStyles}
+${fullBleed}
 </style>
 
 <div id="motu-landing">
