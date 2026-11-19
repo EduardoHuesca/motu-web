@@ -62,7 +62,16 @@ body:has(${wrapper}) .sqs-block-code:has(${wrapper}),
 body:has(${wrapper}) .sqs-block-code:has(${wrapper}) .sqs-block-content {
   padding: 0 !important;
 }
+`;
 
+// El ancho completo va DESPUÉS de los estilos de la página, no antes. Antes
+// iba en el reset, y la regla `body { margin: 0 }` de styles.css —que aquí se
+// convierte en `#motu-landing { margin: 0 }`— lo anulaba por llegar después.
+// Resultado: la portada se quedaba pegada a la caja de Squarespace, que en el
+// teléfono empieza a 26 px del borde, y medía 100vw desde ahí. El borde
+// derecho de todo quedaba fuera de la pantalla, y el botón «Entrar al portal»
+// salía cortado. Lo vimos en la vista móvil de Squarespace el 19 nov 2026.
+const fullBleed = `
 ${wrapper} {
   width: 100vw;
   margin-left: calc(50% - 50vw);
@@ -81,6 +90,7 @@ const output = `<!--
 <style>
 ${squarespaceReset}
 ${scopedStyles}
+${fullBleed}
 </style>
 
 <div id="motu-landing">

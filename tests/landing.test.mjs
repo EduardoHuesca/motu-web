@@ -109,6 +109,19 @@ test("la licencia OFL acompaña a Manrope", () => {
   assert.match(readFileSync(licensePath, "utf8"), /SIL OPEN FONT LICENSE Version 1\.1/);
 });
 
+test("En Squarespace la portada ocupa todo el ancho: ninguna regla posterior anula su margen", () => {
+  // Squarespace mete el bloque en una caja con márgenes. La portada se estira
+  // con `margin-left: calc(50% - 50vw)`; si otra regla de #motu-landing pone
+  // el margen después, gana esa y la portada se sale por la derecha.
+  const css = squarespaceBlock.match(/<style>([\s\S]*?)<\/style>/)[1];
+  // `(?<=…)` mira la llave anterior sin consumirla: si la consumiera, cada
+  // regla se tragaría el cierre de la siguiente y se saltarían una sí y una no.
+  const reglas = [...css.matchAll(/(?<=^|\})\s*#motu-landing\s*\{([^}]*)\}/g)].map((m) => m[1]);
+  const conMargen = reglas.filter((cuerpo) => /(^|[;\s])margin(-left)?\s*:/.test(cuerpo));
+  assert.ok(conMargen.length > 0);
+  assert.match(conMargen.at(-1), /margin-left:\s*calc\(50% - 50vw\)/);
+});
+
 test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
   assert.match(squarespaceBlock, /<meta charset="utf-8">/);
   assert.match(squarespaceBlock, /<div id="motu-landing">/);
