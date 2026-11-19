@@ -4,7 +4,11 @@ import { fileURLToPath } from "node:url";
 
 const toolsDirectory = dirname(fileURLToPath(import.meta.url));
 const siteRoot = resolve(toolsDirectory, "..");
-const assetBase = "https://eduardohuesca.github.io/motu-web/assets/";
+// Las fotos y la letra se sirven desde un subdominio propio, no desde
+// `<cuenta>.github.io`. Cuando apuntaban a `eduardohuesca.github.io`, mudar el
+// repo a la organización las habría dejado en blanco: GitHub no redirige
+// Pages al cambiar de dueño. Con el dominio propio da igual quién sea el dueño.
+const assetBase = "https://recursos.mootuapp.com/assets/";
 const wrapper = "#motu-landing";
 
 const index = readFileSync(resolve(siteRoot, "index.html"), "utf8");
