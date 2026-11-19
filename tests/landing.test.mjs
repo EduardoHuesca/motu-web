@@ -109,17 +109,22 @@ test("la licencia OFL acompaña a Manrope", () => {
   assert.match(readFileSync(licensePath, "utf8"), /SIL OPEN FONT LICENSE Version 1\.1/);
 });
 
-test("En Squarespace la portada ocupa todo el ancho: ninguna regla posterior anula su margen", () => {
-  // Squarespace mete el bloque en una caja con márgenes. La portada se estira
-  // con `margin-left: calc(50% - 50vw)`; si otra regla de #motu-landing pone
-  // el margen después, gana esa y la portada se sale por la derecha.
+test("En Squarespace la portada ocupa todo el ancho sin salirse de la pantalla", () => {
+  // Squarespace mete el bloque en una celda de su rejilla que no está centrada.
+  // Estirar la portada con 100vw desde ahí la sacaba por la derecha y cortaba
+  // «Entrar al portal». La celda debe ocupar la rejilla entera, y la última
+  // regla de #motu-landing que toca ancho o margen debe dejarla al 100 % sin
+  // desplazarla.
   const css = squarespaceBlock.match(/<style>([\s\S]*?)<\/style>/)[1];
+  assert.match(css, /\.fe-block:has\(#motu-landing\)\s*\{\s*grid-column:\s*1 \/ -1 !important;/);
   // `(?<=…)` mira la llave anterior sin consumirla: si la consumiera, cada
   // regla se tragaría el cierre de la siguiente y se saltarían una sí y una no.
   const reglas = [...css.matchAll(/(?<=^|\})\s*#motu-landing\s*\{([^}]*)\}/g)].map((m) => m[1]);
   const conMargen = reglas.filter((cuerpo) => /(^|[;\s])margin(-left)?\s*:/.test(cuerpo));
-  assert.ok(conMargen.length > 0);
-  assert.match(conMargen.at(-1), /margin-left:\s*calc\(50% - 50vw\)/);
+  assert.match(conMargen.at(-1), /margin-left:\s*0;/);
+  const conAncho = reglas.filter((cuerpo) => /(^|[;\s])width\s*:/.test(cuerpo));
+  assert.match(conAncho.at(-1), /width:\s*100%;/);
+  assert.doesNotMatch(css, /100vw/);
 });
 
 test("Squarespace recibe una copia aislada que funciona sin JavaScript", () => {
